@@ -158,9 +158,9 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-8 mx-auto d-block">
-              <figure>
+              <figure class="text-center">
                 <img class="img-responsive img-fluid" src="crypto-pictures/symmetric-key.png">
-                <figcaption class="figure-caption text-center">Figure 1: Symmetric Key Encryption Diagram</figcaption>
+                <figcaption class="figure-caption">Figure 1: Symmetric Key Encryption Diagram</figcaption>
               </figure>
             </div>
           </div>
@@ -204,6 +204,14 @@
           Given the cipher text, we can simply attempt to decrypt the message with keys 0 to 25 and read the resulting message.
           One of the resulting messages will make sense, and this will be the original plaintext message. Especially with
           today's computing, by only having to test out 26 possible keys, makes this encryption scheme extremely easy to break.</p>
+
+          <p>Another important point to notice is that even though each given letter in the message gets mapped to a different letter in
+            the encryption process, every $A$ will map to the same value, same with every $B$, $C$, etc. This opens up opportunity for the cipher
+            to be decrypted (especially in cases of a long cipher) via a letter frequency analysis. If a letter in the cipher text
+            occurs many many times, you can assume under most cases, that the corresponding letter in the plaintext message would
+            be something like an $E$ or $A$, and probably not an $X$ or $Z$. With long cipher texts, the frequencies of letters in the cipher
+            will approximately match frequencies of letter in the language, and thus the cipher can be mapped back to the plaintext message fairly
+            easily. This is just another example of why this cipher is very weak.</p>
 
           <hr>
 
@@ -325,29 +333,29 @@
                   <div id="quiz2" class="list-group col-md">
                       <h4 class="text-center">Quiz on One Time Pad</h4>
 
-                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse22">
-                          2. Given $m=$ ENCRYPTION IS COOL, $k=$ ABCABCABCA BC ABCA, can you encrypt the message?
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse21">
+                          1. Given $m=$ ENCRYPTION IS COOL, $k=$ ABCABCABCA BC ABCA, can you encrypt the message?
                       </button>
-                      <div id="collapse22" class="panel-collapse collapse in">
+                      <div id="collapse21" class="panel-collapse collapse in">
                           <div class="">The resulting cipher is $c=$ EOERZRTJQN JU CPQL</div>
                       </div>
 
                       <hr>
 
-                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse23">
-                          3. Given $c=$ AAAAA, $k=$ TWPPM, can you decrypt the cipher to find the hidden message?
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse22">
+                          2. Given $c=$ AAAAA, $k=$ TWPPM, can you decrypt the cipher to find the hidden message?
                       </button>
-                      <div id="collapse23" class="panel-collapse collapse in">
+                      <div id="collapse22" class="panel-collapse collapse in">
                           <div class="">The plaintext message is $m=$ HELLO</div>
                       </div>
 
                       <hr>
 
-                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse24">
-                          4. Given the cipher text in 3, $c=$ AAAAA, how many different key, plaintext message pairs
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse23">
+                          3. Given the cipher text in 3, $c=$ AAAAA, how many different key, plaintext message pairs
                           can be used to map to that cipher text?
                       </button>
-                      <div id="collapse24" class="panel-collapse collapse in">
+                      <div id="collapse23" class="panel-collapse collapse in">
                           <div class="">There are $26^5$ differnt key, plaintext message pairs that can map to the given cipher
                           text. This is because for every possible message, $m$, there exists a valid key $k$ that maps the message
                           to the cipher text of $c=$ AAAAA.</div>
@@ -355,19 +363,19 @@
 
                       <hr>
 
-                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse25">
-                          5. Can you provide an encrypt implementation?
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse24">
+                          4. Can you provide an encrypt implementation?
                       </button>
-                      <div id="collapse25" class="panel-collapse collapse in">
+                      <div id="collapse24" class="panel-collapse collapse in">
                           <div class="">See our implementation <b>HERE</b></div>
                       </div>
 
                       <hr>
 
-                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse26">
-                          6. Can you provide a decrypt implementation?
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse25">
+                          5. Can you provide a decrypt implementation?
                       </button>
-                      <div id="collapse26" class="panel-collapse collapse in">
+                      <div id="collapse25" class="panel-collapse collapse in">
                           <div class="">See our implementation <b>HERE</b></div>
                       </div>
                   </div>
@@ -383,6 +391,65 @@
 
               <div id="collapsevigenere" class="panel-collapse collapse in">
 
+                  <p>The Vigenère Cipher was proposed by Blaise de Vigenère in the 16th Century. It was in response to noticing that
+                    more simple ciphers, like the Caesar Cipher, can be broken quite easily with longer cipher texts by analyzing the
+                    frequency of letter distributions. So, this was developed to try and stop this problem. The Vigenère Cipher is
+                    regarded as a polyalphabetic substitution cipher because it uses more than one cipher alphabet (whereas the
+                      Caesar Cipher only used one).
+                  </p>
+
+                  <p><b>Encryption: </b>The encryption method is very similar to the one time pad, except the key is
+                    not required to be as long as the message. To make up for this, the key is simply extended to be as
+                    long as the message. If the message is of length 10 and the key is of length 5, then when performing the
+                    encryption, it would follow the same process as the one time pad where the key is simply written two
+                    times to match up with all the letters of the plaintext message.</p>
+
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-8 mx-auto d-block">
+                              <figure class="text-center">
+                                  <img class="img-responsive img-fluid align-content-center" src="crypto-pictures/vigenere.png">
+                                  <figcaption class="figure-caption">Figure 2: Vigenère Cipher Tableau</figcaption>
+                              </figure>
+                          </div>
+                      </div>
+                  </div>
+
+                  <p>So, defining $m_i$ as the character in the ith index of the message, $c_i$ as the character in the ith index of
+                      the resulting cipher, and $k_i$ as the character in the ith index of the key (after the key is extended),
+                      the decryption method is defined by the following:</p>
+
+                  <p>$$c_i = m_i + k_i (mod 26)$$</p>
+
+                  <p><b>Decryption: </b>Given the cipher text and the key, the decryption method is simply the undoing of the encryption method above. </p>
+
+                  <p>So, defining $m_i$ as the character in the ith index of the message, $c_i$ as the character in the ith index of
+                      the resulting cipher, and $k_i$ as the character in the ith index of the key (after extending), the decryption method is defined by the following:</p>
+
+                  <p>$$m_i = c_i - k_i (mod 26)$$</p>
+
+                  <p><b>Cryptanalysis:</b> The cipher at first glance appears to be extremely tough to beat,
+                      but in practice this is not the case. </p>
+
+                  <p>If the key is simply one letter long, then the encryption method
+                      is equivalent to that of the Caesar Cipher which we have seen is very easy to break.</p>
+
+                  <p></p>However, if the key is longer than one, two mathematicians in the early 1900s, Kasiki and Friedman, independently developed mathematical tests
+                    to help determine the length of the key used given only the cipher text. Then, given the length of the key,
+                    the problem is reduced down to a set of Caesar Ciphers which can then be individually broken.</p>
+
+                  <p>In the case of really long keys and keys that are the same length of the plaintext message, it gives the same
+                    security properties as the one time pad.</p>
+
+                  <p><b>The Civil War:</b> The cipher was used in the Civil War by the Confederacy. However, the Confederate leadership who
+                    were sending these encrypted messages liked to repeat the keys that were being used. The three most common keys
+                    that were used were: "MANCHESTER BLUFF", "COMPLETE VICTORY", and "COME RETRIBUTION". The Union was able
+                    to regularly break the codes due to the use of repeated key words. So, much like the one time pad, the
+                    key word should not be used time and time again or else it gives rise to the ability to sense patterns and break
+                      the code more easily.</p>
+
+                  <hr>
+
                   <div class="container">
                       <div class="row">
                           <div class="col-sm-8 mx-auto d-block">
@@ -390,6 +457,46 @@
                                   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
                               </div>
                           </div>
+                      </div>
+                  </div>
+
+                  <hr>
+
+                  <div id="quiz3" class="list-group col-md">
+                      <h4 class="text-center">Quiz on Vigenère Cipher</h4>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz3" href="#collapse31">
+                          1. Given $m=$ ENCRYPTION IS COOL, $k=$ ABC, can you encrypt the message?
+                      </button>
+                      <div id="collapse31" class="panel-collapse collapse in">
+                          <div class="">The resulting cipher is $c=$ EOERZRTJQN JU CPQL</div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz3" href="#collapse32">
+                          2. Given $c=$ BMQFW, $k=$ THE, can you decrypt the cipher to find the hidden message?
+                      </button>
+                      <div id="collapse32" class="panel-collapse collapse in">
+                          <div class="">The plaintext message is $m=$ HELLO</div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz3" href="#collapse33">
+                          3. Can you provide an encrypt implementation?
+                      </button>
+                      <div id="collapse33" class="panel-collapse collapse in">
+                          <div class="">See our implementation <b>HERE</b></div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz3" href="#collapse34">
+                          4. Can you provide a decrypt implementation?
+                      </button>
+                      <div id="collapse34" class="panel-collapse collapse in">
+                          <div class="">See our implementation <b>HERE</b></div>
                       </div>
                   </div>
               </div>
