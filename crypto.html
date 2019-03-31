@@ -116,14 +116,47 @@
             was unusual and non-standard were used by some in order to communicate secret messages. This is the first known
             usage of written cryptography</p>
 
-        <p><b>487 BC: </b> Greeks developed a method to send secret messages that used a special staff called a skytale.</p>
+        <p><b>487 BC: </b> Greeks developed a method to send secret messages that used a special staff called a skytale. The
+            secret message would be written on a piece of leather such that when wrapped around the skytale, the message
+            could be read clearly. The sender could then write the message, send a messenger who would wear the leather with the
+            message as a belt, and then give the belt to the receiver. The receiver would then have a matching skytale as the
+            sender and then could wrap the belt around it and read the message.
+        </p>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <figure class="text-center">
+                          <img class="img-responsive img-fluid" src="crypto-pictures/skytale.png">
+                          <figcaption class="figure-caption">Figure 1: Skytale Diagram</figcaption>
+                      </figure>
+                  </div>
+              </div>
+          </div>
 
         <p><b>100ish BC: </b> Julius Caesar used the famed Caesar Cipher to send messages to his trusted acquaintances.</p>
 
         <p><b>1553: </b> Giovan Batista Belaso introduced the idea of repeated polyalphabetic ciphers. This inspired the creation
             of the Vigenère Cipher</p>
 
-        <p><b>1933-1945: </b>The Enigma machine was used in WWII by Nazi Germany</p>
+        <p><b>1933-1945: </b>The Enigma machine was used in WWII by Nazi Germany to encrypt sensitive information. Alan Turing and a team of mathematicians and
+            code breakers worked together to break the Enigma. With the Enigma Machine, there were a huge number of settings that the
+            code breaker would need to et right in order to crack the code. In fact, there were almost 15 million million million different possibilities
+            which gave the impression that the Enigma was unbreakable. Turing and the team realized that the end of every message being sent was
+            "Heil Hitler". This is what led to it being broken and German messages being decrypted. The common ending
+            was used to give away hints at the settings and this led to the Allies being able to read German Enigma-encrypted messages. Therefore,
+            the previously unbreakable encryption method, was broken.</p>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <figure class="text-center">
+                          <img class="img-responsive img-fluid" src="crypto-pictures/enigma.png">
+                          <figcaption class="figure-caption">Figure 2: Enigma Machine</figcaption>
+                      </figure>
+                  </div>
+              </div>
+          </div>
 
         <p><b>1976: </b>Diffie and Hellman (of the famed Diffie-Hellman key exchange) introduced the idea of public key
             cryptography.</p>
@@ -160,7 +193,7 @@
             <div class="col-sm-8 mx-auto d-block">
               <figure class="text-center">
                 <img class="img-responsive img-fluid" src="crypto-pictures/symmetric-key.png">
-                <figcaption class="figure-caption">Figure 1: Symmetric Key Encryption Diagram</figcaption>
+                <figcaption class="figure-caption">Figure 3: Symmetric Key Encryption Diagram</figcaption>
               </figure>
             </div>
           </div>
@@ -170,8 +203,8 @@
 
         <h1 class="text-center">Section 4 - Symmetric-Key Encryption Examples</h1>
 
-          <p>In this section, we will see explicit examples of symmetric-key encryption and will learn a few basic
-              encryption/ and cryptanalysis techniques!</p>
+          <p>In this section, we will explore explicit examples of symmetric-key encryption and will learn a few basic
+              encryption algorithms and cryptanalysis techniques!</p>
 
           <div id="caesar" class="list-group col-md">
 
@@ -277,7 +310,7 @@
               <hr>
 
               <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse6">
-                  6. Can you provide an implementation to perform an attack and discover the plaintext message given only the
+                  6. Can you provide a brute force implementation to perform an attack and discover the plaintext message given only the
                   cipher text and no key?
               </button>
               <div id="collapse6" class="panel-collapse collapse in">
@@ -409,7 +442,7 @@
                           <div class="col-sm-8 mx-auto d-block">
                               <figure class="text-center">
                                   <img class="img-responsive img-fluid align-content-center" src="crypto-pictures/vigenere.png">
-                                  <figcaption class="figure-caption">Figure 2: Vigenère Cipher Tableau</figcaption>
+                                  <figcaption class="figure-caption">Figure 4: Vigenère Cipher Tableau</figcaption>
                               </figure>
                           </div>
                       </div>
@@ -510,6 +543,48 @@
 
               <div id="collapsemonoalphasub" class="panel-collapse collapse in">
 
+                  <p>The monoalphabetic substitution cipher is a form of a substitution cipher where every instance of a letter
+                    gets mapped to a fixed letter in the cipher.</p>
+
+                  <p><b>Encryption: </b> Given a plaintext message, $m$, every instance of a letter in the plaintext gets mapped to the same letter in the
+                    cipher text. The key, $k$, can be looked at as the map that maps every plaintext letter to a letter in the cipher text.
+                    Look at the following example of a key. In this example, $A$ in the plaintext maps to $B$ in the cipher,
+                      $B$ maps to $H$, $\ldots$, $Z$ maps to $J$.  </p>
+
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-8 mx-auto d-block">
+                              <figure class="text-center">
+                                  <img class="img-responsive img-fluid" src="crypto-pictures/monoalphabetic.png">
+                                  <figcaption class="figure-caption">Figure 5: Monoalphabetic Substitution Cipher Key</figcaption>
+                              </figure>
+                          </div>
+                      </div>
+                  </div>
+
+                  <p>So, if we let the notation $k[\alpha]$ correspond to the cipher text value that corresponds to the plaintext letter
+                    $\alpha$, then the encryption scheme can be denoted by:</p>
+
+                  <p>$$c_i = k[m_i]$$</p>
+
+                  <p><b>Decryption: </b>The decryption scheme is the reverse of the encryption scheme. If we let the notation
+                    $k^{-1}[\alpha]$ correspond to the plaintext letter that corresponds with the cipher text letter $\alpha$, then
+                    the decryption scheme can be denoted by:</p>
+
+                  <p>$$m_i = k^{-1}[c_i]$$</p>
+
+                  <p><b>Cryptanalysis:</b> The key space is extremely large in this encryption method. However, this method
+                    is not entirely secure. This method can fall pray to a letter frequency analysis attack. So, without knowing the key,
+                    it can be possible, in cases of long cipher texts, to analyze the letter frequencies and map the cipher text letters
+                    back to plaintext letters.</p>
+
+                  <p><b>Games:</b> This cipher is commonly used to create cryptogram puzzles. See <a href="https://api.razzlepuzzles.com/cryptogram">HERE</a> for
+                    a chance to try some out! These are able to be done by hand because besides showing a letter frequency analysis, games like these provide
+                    punctuation and give the solver the lengths of the words. This helps the solver easily deduce some of the most common
+                    letters and words and then fill in the rest.</p>
+
+                  <hr>
+
                   <div class="container">
                       <div class="row">
                           <div class="col-sm-8 mx-auto d-block">
@@ -519,24 +594,37 @@
                           </div>
                       </div>
                   </div>
-              </div>
-          </div>
 
-          <hr>
+                  <hr>
 
-          <div id="enigma" class="list-group col-md">
+                  <div id="quiz4" class="list-group col-md">
+                      <h4 class="text-center">Quiz on Monoalphabetic Substitution Cipher</h4>
 
-              <button class="btn btn-light " data-toggle="collapse" data-parent="#enigma" href="#collapseenigma"><h2 class="text-center">4.5 - Enigma Machine</h2></button>
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz4" href="#collapse41">
+                          1. Given $m=$ ENCRYPTION IS COOL, and the key is the same as in Figure 5 above, can you encrypt the message?
+                      </button>
+                      <div id="collapse41" class="panel-collapse collapse in">
+                          <div class="">The resulting cipher is $c=$ FNIAGYCRMN RV IMMS</div>
+                      </div>
 
-              <div id="collapseenigma" class="panel-collapse collapse in">
+                      <hr>
 
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-sm-8 mx-auto d-block">
-                              <div class="embed-responsive embed-responsive-16by9">
-                                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
-                              </div>
-                          </div>
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz4" href="#collapse42">
+                          2. Given $c=$ IRYPFA,  and the key is the same as in Figure 5 above, can you decrypt the cipher to find the hidden message?
+                      </button>
+                      <div id="collapse42" class="panel-collapse collapse in">
+                          <div class="">The plaintext message is $m=$ CIPHER</div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz4" href="#collapse43">
+                          3. How many possible keys are there in the monoalphabetic substitution cipher, with $26$ total letters
+                            in the language?
+                      </button>
+                      <div id="collapse43" class="panel-collapse collapse in">
+                          <div class="">There are $26! = (26)\cdot (25) \cdots (1) $ different possible keys. This is because there are $26!$ different
+                            permutations of the alphabet, each of which correspond to a single possible key.</div>
                       </div>
                   </div>
               </div>
@@ -546,21 +634,75 @@
 
         <h1 class="text-center">Section 5 - Public-Key Cryptography</h1>
 
+          <p>Most of the discussion so far has been centered around symmetric-key cryptography. As we have seen, this means that
+            the sender and receiver need a way to securely exchange the key. But, what if this exchange which is a security
+              bottleneck wasn't needed? That is where public-key cryptography comes in.</p>
+
+          <p>With public-key cryptography, the receiver of messages generates a public/private key pair. The public and private
+            key are related under some sort of mathematical operation. But, unlike symmetric key cryptography, both parties (sender and receiver)
+              don't know both of the keys. This is because the receiver publicly posts the public key. Then, any sender can send an
+              encrypted message to the receiver using the public key. Then, the receiver uses their own secret key (which will never be released) to read the
+              originally sent plaintext message. Because the secret key is to be a secret that only the receiver knows, and because the
+            mathematical algorithm to encrypt as well as the public key are made publicly available, it should be
+            nearly impossible to compute the secret key given the public key and the algorithm. This is important because
+            if an attacker were able to figure out the secret key, then they could read any and all messages sent to a particular person or company.</p>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <figure class="text-center">
+                          <img class="img-responsive img-fluid" src="crypto-pictures/publickey.png">
+                          <figcaption class="figure-caption">Figure 6: Public-Key Cryptography Diagram</figcaption>
+                      </figure>
+                  </div>
+              </div>
+          </div>
+
+          <p> Public-Key Cryptography, ever since its initial proposal in 1976, has become the norm for companies around the world.
+            You can go on to websites such as Google and Amazon and take a look at their public keys. To do this,
+            you must click on the lock that is to the left of the URL, then click certificate, then the details tab and lastly
+            the folder that says Public key.</p>
+
+          <div id="pkquiz" class="list-group col-md">
+              <h4 class="text-center">Quiz on Public-Key Cryptography</h4>
+              <button class="btn btn-light" data-toggle="collapse" data-parent="#pkquiz" href="#collapsepk1">
+                  1. Why do you think that Public-Key cryptography is the today's norm as opposed to Symmetric-Key Cryptography?
+              </button>
+              <div id="collapsepk1" class="panel-collapse collapse in">
+                  <div class="">With symmetric key encryption, there needs to be a key exchange. There needs to be a way for
+                    the sender and the receiver to exchange the secret key such that they each know it, but an attacker who
+                    may be listening to the exchanged messages will not be able to figure out the key. Public-Key encryption
+                    protocols allow for confidential messages to be sent without the need of a key exchange.</div>
+              </div>
+          </div>
+
         <hr>
 
-        <h1 class="text-center">Section 6 - The Future</h1>
+          <!-- REFERENCES -->
+          <div id="ref" class="list-group col-md">
+              <button class="btn btn-light " data-toggle="collapse" data-parent="#ref" href="#collapseref"><h1>References</h1></button>
+              <div id="collapseref" class="panel-collapse collapse in">
+                  <p>https://www.globalsign.com/en/ssl-information-center/what-is-public-key-cryptography/</p>
+                  <p>https://crypto.interactive-maths.com/monoalphabetic-substitution-ciphers.html</p>
+                  <p>https://www.nku.edu/~christensen/section%2011%20vigenere%20cryptography.pdf</p>
+                  <p>https://us.norton.com/internetsecurity-privacy-what-is-encryption.html</p>
+                  <p>https://www.comparitech.com/blog/information-security/famous-codes-and-ciphers-through-history-and-their-role-in-modern-encryption/</p>
+                  <p>https://pages.mtu.edu/~shene/NSF-4/Tutorial/VIG/Vig-Base.html</p>
+                  <p>http://practicalcryptography.com/ciphers/caesar-cipher/</p>
+                  <p>https://security.blogoverflow.com/2012/08/confidentiality-integrity-availability-the-three-components-of-the-cia-triad/</p>
+                  <p>https://usa.kaspersky.com/resource-center/definitions/what-is-cryptography</p>
+                  <p>https://www.gnupg.org/gph/en/manual/c173.html</p>
+                  <p>https://www.investopedia.com/terms/m/mooreslaw.asp</p>
+                  <p>https://www.ibm.com/support/knowledgecenter/en/SSB23S_1.1.0.14/gtps7/s7symm.html</p>
+                  <p>https://searchsecurity.techtarget.com/definition/one-time-pad</p>
+                  <p>http://user.it.uu.se/~elenaf/Teaching/Krypto2003/vigenere.html</p>
+                  <p>https://www.cryptomuseum.com/crypto/vigenere/</p>
+                  <p>https://www.ssl2buy.com/wiki/symmetric-vs-asymmetric-encryption-what-are-differences</p>
+                  <p>https://www.scienceabc.com/innovation/cracking-the-uncrackable-how-did-alan-turing-and-his-team-crack-the-enigma-code.html</p>
+              </div>
+          </div>
 
         <hr>
-
-        <div class="text-center">
-
-          <h1> References </h1>
-          <p> Maybe we just include the website here and in the report include a formal reference </p>
-
-        </div>
-
-        <hr>
-
 
       <!--FOOTER - Pulled from https://mdbootstrap.com/docs/jquery/navigation/footer/-->
       <footer class="page-footer font-small blue pt-4">
@@ -568,7 +710,10 @@
           <div class="row">
             <div class="col-md-6 mt-md-0 mt-3">
               <h5 class="text-uppercase">Hope you enjoyed this section!</h5>
-              <p>We can put more things here</p>
+              <h3>Learning Outcomes:</h3>
+                <p>Basics of Encryption and Decryption</p>
+                <p>Symmetric vs. Public-Key Cryptography</p>
+                <p>Applications of Symmetric-Key Cryptography</p>
             </div>
             <hr class="clearfix w-100 d-md-none pb-3">
             <div class="col-md-6 mb-md-0 mb-3">
