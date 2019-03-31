@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Cryptography</title>
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" >
+          <button class="btn btn-outline-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            All Sections <i class="fa fa-caret-down"></i>
+          </button>
+        <div class="dropdown-menu pre-scrollable" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item bg-light" href="./index.html">Home</a>
+          <a class="dropdown-item bg-light" href="./web-security.html">Web Security</a>
+          <a class="dropdown-item bg-light" href="./cloud-security.html">Cloud Security</a>
+          <a class="dropdown-item bg-light" href="./diffie-hellman.html">Diffie Hellman</a>
+          <a class="dropdown-item bg-secondary text-white">Cryptography</a>
+          <a class="dropdown-item bg-light" href="anti-virus-software.html">Anti Virus Software</a>
+          <a class="dropdown-item bg-light" href="./about-us.html">About Us</a>
+        </div>
+        <h4 class="mx-auto">Cryptography</h4>
+        <div>
+        <a class="btn btn-outline-secondary" href="./diffie-hellman.html"><i class="fa fa-arrow-left"></i> Diffie Hellman</a>
+        <a class="btn btn-outline-secondary" href="./anti-virus-software.html">Anti Virus Software <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </nav>
+
+      <div class="container">
+
+        <h1 class="text-center">Section 1 - What is Cryptography?</h1>
+        <p>In our current society, data is a fundamental resource that is constantly being created
+            and transported. With this, there needs to be a way such that the information being sent
+            has the property of <b>confidentiality</b>.</p>
+
+        <p><b>Confidentiality:</b> Confidentiality is the guarantee that information being sent is only able to be read
+              and understood by the expected recipient(s) of the private message. To help ensure that
+              confidentiality is achieved, this is where <b>cryptography</b> comes in.</p>
+
+        <p><b>Cryptography:</b> Kaspersky Lab, a cybersecurity provider, defines cryptography as "the
+            study of secure communications techniques that allow for only the sender and intended recipient
+            of a message to view its contents". This reflects the desire to achieve confidentiality. In order for a
+            sender of a message and receiver of a message to communicate, there are two steps. First, the sender
+            <b>encrypts</b> the plain text message to create a <b>cipher</b>; then the sender sends the cipher to the receiver.
+            The receiver then <b>decrypts</b> the message in order to read the contents of the original plaintext
+            message. The encryption and decryption center on the need for one or more <b>keys</b> that will either be made
+            public, or will be secretly shared between the sender and receiver. More on keys will be presented later.</p>
+
+        <p><b>Encryption: </b>Symantec Corporation defines encryption as the process of "helping protect personal
+            data by using a 'secret code' to scramble it so that it cannot be read by anyone who doesn't have the
+            code key". The scrambled message is called the cipher text. Encryption "locks up" the data
+            so that no one, except those with the key, can "unlock it" and read the plaintext message inside.</p>
+
+        <p><b>Decryption: </b>Decryption is the 'undoing' of the encryption. So, with decryption, the receiver gets a
+            cipher text, and applies the key to it, along with the known decryption algorithm and in return, this algorithm
+            pops out the original plain text message. Decryption "unlocks" the data that was being "locked up" in the
+            cipher text.</p>
+
+        <p><b>Cryptanalysis: </b>Encryption and Decryption methods usually rely on some sort of underlying math or algorithm
+            that is fairly hard break unless you know the key that is used in the encryption or decryption algorithm. This being said,
+            cryptanalysis is the art of decrypting a cipher text without actually knowing the key. This may be due to the
+            the <b>key space</b> is relatively small, meaning that it would be feasible to simply try out every single possible
+            key. It also could be due to that if the attacker knows the encryption algorithm, then the resulting cipher text
+            could give away hints at what the key should be and with this information the attacker can recover the plaintext message.
+            Moral of the story is that there could be a number of reasons why a cryptanalysis attack may be able to be carried out,
+            constant innovation in this field, especially as technology and computing power are always improving and becoming
+            more efficient.</p>
+
+        <p>After discussing the basics of encryption let's analyze the question of why encryption is used in practice. Well,
+            as we saw above, encryption provides confidentiality. This is extremelt important to provide in practice because
+            we all use online services that use our data, and with these, we want to be assured that only the people that
+            we have given the right to use and see our data can see it. Further, data breaches are always on the news; this
+            goes to show that people out there want to steal data because in today's world, data is extremely valuable. With encryption,
+            another level of protection and privacy is added. But also, in some cases, laws and regulations require it. Some
+            examples are HIPPA, FERPA, and FCPA. These regulations require the use of encryption to protect the information of the
+            community they aim to protect.</p>
+
+        <p>Cryptography is a very interesting subject with a clear evolution throughout time, in the next section let's
+            take a look at the arch of cryptography and how it has changed over time.</p>
+
+        <hr>
+
+        <h1 class="text-center">Section 2 - The History of Cryptography</h1>
+
+        <p>Encryption methods have changed throughout time. A lot of this evolutions can be attributed to advancements in
+            technology. Encryption originated in order to hide messages from those who were deemed untrustworthy by the sender.
+            As time went on, encryption has seen many successful, and unsuccessful, applications when it comes to war. In more
+            modern times, encryption is used in the online services we rely on in order to help protect our personal information.
+            This section will highlight some key advancements in the history of cryptography, and several of the advancements mentioned
+            will be touched upon in more detail in following sections. The general timeline information was taken from
+            Melis Jackob's article entitled History of Encryption written for the SANS Institute.</p>
+
+        <p><b>1900 BC: </b> Egyptians were using hieroglyphs as the main form of writing. However, a form of hieroglyphs that
+            was unusual and non-standard were used by some in order to communicate secret messages. This is the first known
+            usage of written cryptography</p>
+
+        <p><b>487 BC: </b> Greeks developed a method to send secret messages that used a special staff called a skytale. The
+            secret message would be written on a piece of leather such that when wrapped around the skytale, the message
+            could be read clearly. The sender could then write the message, send a messenger who would wear the leather with the
+            message as a belt, and then give the belt to the receiver. The receiver would then have a matching skytale as the
+            sender and then could wrap the belt around it and read the message.
+        </p>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <figure class="text-center">
+                          <img class="img-responsive img-fluid" src="crypto-pictures/skytale.png">
+                          <figcaption class="figure-caption">Figure 1: Skytale Diagram</figcaption>
+                      </figure>
+                  </div>
+              </div>
+          </div>
+
+        <p><b>100ish BC: </b> Julius Caesar used the famed Caesar Cipher to send messages to his trusted acquaintances.</p>
+
+        <p><b>1553: </b> Giovan Batista Belaso introduced the idea of repeated polyalphabetic ciphers. This inspired the creation
+            of the Vigenère Cipher</p>
+
+        <p><b>1933-1945: </b>The Enigma machine was used in WWII by Nazi Germany to encrypt sensitive information. Alan Turing and a team of mathematicians and
+            code breakers worked together to break the Enigma. With the Enigma Machine, there were a huge number of settings that the
+            code breaker would need to et right in order to crack the code. In fact, there were almost 15 million million million different possibilities
+            which gave the impression that the Enigma was unbreakable. Turing and the team realized that the end of every message being sent was
+            "Heil Hitler". This is what led to it being broken and German messages being decrypted. The common ending
+            was used to give away hints at the settings and this led to the Allies being able to read German Enigma-encrypted messages. Therefore,
+            the previously unbreakable encryption method, was broken.</p>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <figure class="text-center">
+                          <img class="img-responsive img-fluid" src="crypto-pictures/enigma.png">
+                          <figcaption class="figure-caption">Figure 2: Enigma Machine</figcaption>
+                      </figure>
+                  </div>
+              </div>
+          </div>
+
+        <p><b>1976: </b>Diffie and Hellman (of the famed Diffie-Hellman key exchange) introduced the idea of public key
+            cryptography.</p>
+
+        <p><b>1977: </b>Rivest, Shamir and Adleman developed the RSA encryption algorithm which was one of the first applications
+            of Diffie and Hellman's proposal of public key cryptography</p>
+
+        <p>Encryption methods are always innovating, and as we see throughout time and will continue to see with some examples
+            later, methods for encryption are bound to become obsolete as time goes on. This is because someone is able to
+            do a cryptanalysis and break the method, or simply because computing power allows for previously unbreakable system to be
+            broken via a brute force attack on the key set. This process of methods becoming obsolete, especially in the context of
+            modern encryption methods can be looked at through the lens of the implications of <b>Moore's Law</b>.</p>
+
+        <p><b>Moore's Law: </b> This is an observation that the number of transistors on a microchip doubles approximately
+            every two years, which also leads to decreases in costs of computers. This law has some huge implications. With more transistors
+            on a microchip, and with decreasing costs, the amount of computation that is feasible for individuals, but also
+            large corporations, to harness increases as time goes on. This shows how over time certain encryption methods become obsolete.
+            This is because previously 'hard' computations become less hard the more computation power is available. In some cases,
+            previously infeasible brute force attacks through all the possible keys become possible. In other situations, more
+            computation power could allow for the ability to find weaknesses in the scheme and then allow for the ability for
+            a cryptanalysis attack to be carried out. So, we see that as technology improves, older encryption methods can become obsolete
+            and new methods need to be created (or old methods updated) to keep pace with the ever-improving technology.</p>
+
+        <hr>
+
+        <h1 class="text-center">Section 3 - Symmetric-Key Cryptography</h1>
+
+          <p>In symmetric-key cryptography, a key is used in order to encrypt the plaintext method and
+              then <b>the same</b> key is used to decrypt the cipher text. This would mean that the symmetric key must be
+              exchanged between the sender and receiver so that both the encryption and decryption can be carried out.</p>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 mx-auto d-block">
+              <figure class="text-center">
+                <img class="img-responsive img-fluid" src="crypto-pictures/symmetric-key.png">
+                <figcaption class="figure-caption">Figure 3: Symmetric Key Encryption Diagram</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <h1 class="text-center">Section 4 - Symmetric-Key Encryption Examples</h1>
+
+          <p>In this section, we will explore explicit examples of symmetric-key encryption and will learn a few basic
+              encryption algorithms and cryptanalysis techniques!</p>
+
+          <div id="caesar" class="list-group col-md">
+
+              <button class="btn btn-light " data-toggle="collapse" data-parent="#caesar" href="#collapsecaesar"><h2 class="text-center">4.1 - Caesar Cipher</h2></button>
+
+          <div id="collapsecaesar" class="panel-collapse collapse in">
+
+          <p>This cipher was created by Julius Caesar (hence the name).</p>
+
+          <p><b>Encryption: </b>This is a basic shift cipher, which means that given the plaintext message, all letters
+            will be shifted by the same factor, and that factor is given by the key. Let the letter $A=0, B=1, \ldots, Z=25$. The key is then an integer.</p>
+
+          <p>So, defining $m_i$ as the character in the ith index of the message, $c_i$ as the character in the ith index of
+              the resulting cipher, and $k$ as the key, the encryption method is defined by the following:</p>
+
+          <p>$$c_i = m_i + k (mod 26)$$</p>
+
+          <p><b>Decryption: </b> Given the cipher text and the key, the decryption method is simply the undoing of the encryption method.
+          <p>So, defining $m_i$ as the character in the ith index of the message, $c_i$ as the character in the ith index of
+              the resulting cipher, and $k$ as the key, the decryption method is defined by the following:</p>
+
+          <p>$$m_i = c_i - k (mod 26)$$</p>
+
+          <p><b>Cryptanalysis: </b>The Caesar Cipher is a very weak encryption scheme with a relatively small key space. Although
+              the value of the key $k$ can be any integer greater than 0, however due to the size of the alphabet being 26 letters long,
+              there are really only 26 completely distinct keys. By this there means given any message $m$, there are only 26 possible
+              cipher texts that can be generated because every letter is shifted by the exact same factor.</p>
+
+          <p>So, due to the small size of the key space, let's observe a brute force way to break the encryption method.
+          Given the cipher text, we can simply attempt to decrypt the message with keys 0 to 25 and read the resulting message.
+          One of the resulting messages will make sense, and this will be the original plaintext message. Especially with
+          today's computing, by only having to test out 26 possible keys, makes this encryption scheme extremely easy to break.</p>
+
+          <p>Another important point to notice is that even though each given letter in the message gets mapped to a different letter in
+            the encryption process, every $A$ will map to the same value, same with every $B$, $C$, etc. This opens up opportunity for the cipher
+            to be decrypted (especially in cases of a long cipher) via a letter frequency analysis. If a letter in the cipher text
+            occurs many many times, you can assume under most cases, that the corresponding letter in the plaintext message would
+            be something like an $E$ or $A$, and probably not an $X$ or $Z$. With long cipher texts, the frequencies of letters in the cipher
+            will approximately match frequencies of letter in the language, and thus the cipher can be mapped back to the plaintext message fairly
+            easily. This is just another example of why this cipher is very weak.</p>
+
+          <hr>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <hr>
+
+          <div id="quiz" class="list-group col-md">
+              <h4 class="text-center">Quiz on Caesar Cipher</h4>
+
+              <button class="btn btn-light " data-toggle="collapse" data-parent="#quiz" href="#collapse1">
+                  1. In the encryption and decryption schemes, there is a $(mod 26)$, can you explain why this is? </button>
+              <div id="collapse1" class="panel-collapse collapse in">
+                  <div class="">$(mod 26)$ gives the ability to loop around from $Z$ to $A$. By this, it means that if we were at the letter
+                  $Z$, which equals 25, and shifted one more, then by modding it with 26, the result will give us $26 mod 26 = 0$, and
+                  0 corresponds to the letter $A$.</div>
+              </div>
+
+              <hr>
+
+              <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse2">
+                  2. Given $m=$ ENCRYPTION IS COOL, $k= 2$, can you encrypt the message?
+              </button>
+              <div id="collapse2" class="panel-collapse collapse in">
+                  <div class="">The resulting cipher is $c=$ GPETARVKQP KU EQQN</div>
+              </div>
+
+              <hr>
+
+              <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse3">
+                  3. Given $c=$ BNLDARCH JLJMNVH, $k= 5$, can you decrypt the cipher to find the hidden message?
+              </button>
+              <div id="collapse3" class="panel-collapse collapse in">
+                  <div class="">The plaintext message is $m=$ SECURITY ACADEMY</div>
+              </div>
+
+              <hr>
+
+              <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse4">
+                  4. Can you provide an encrypt implementation?
+              </button>
+              <div id="collapse4" class="panel-collapse collapse in">
+                  <div class="">See our implementation <b>HERE</b></div>
+              </div>
+
+              <hr>
+
+              <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse5">
+                  5. Can you provide a decrypt implementation?
+              </button>
+              <div id="collapse5" class="panel-collapse collapse in">
+                  <div class="">See our implementation <b>HERE</b></div>
+              </div>
+
+              <hr>
+
+              <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse6">
+                  6. Can you provide a brute force implementation to perform an attack and discover the plaintext message given only the
+                  cipher text and no key?
+              </button>
+              <div id="collapse6" class="panel-collapse collapse in">
+                  <div class="">See our implementation <b>HERE</b></div>
+              </div>
+          </div>
+          </div>
+          </div>
+
+          <hr>
+
+          <div id="otp" class="list-group col-md">
+
+              <button class="btn btn-light " data-toggle="collapse" data-parent="#otp" href="#collapseotp"><h2 class="text-center">4.2 - One Time Pad</h2></button>
+
+              <div id="collapseotp" class="panel-collapse collapse in">
+
+                  <p> The One Time pad is an encryption method where the key that is used is at least as long as the plaintext message.
+                    The "one" on one time pad is because the key should only be used once so that if an attacker sees several ciphers,
+                    they will get no information about the key or plaintext because the key changes every time</p>
+
+                  <p><b>Encryption: </b>We are given a message $m$, and then a string of letters which will be the key $k$
+                      and it should be at least as long as the message. To encrypt, we line up the ith letter of the message with
+                        the ith letter of the key. Then, to create the ith letter of the cipher text, we perform a shift, much
+                        like the Caesar Cipher, by shifting the message letter by the value of the letter in the key.</p>
+
+                  <p>So, defining $m_i$ as the character in the ith index of the message, $c_i$ as the character in the ith index of
+                      the resulting cipher, and $k_i$ as the character in the ith index of the key, the encryption method is defined by the following:</p>
+
+                  <p>$$c_i = m_i + k_i (mod 26)$$</p>
+
+                  <p><b>Decryption: </b>Given the cipher text and the key, the decryption method is simply the undoing of the encryption method above. </p>
+
+                  <p>So, defining $m_i$ as the character in the ith index of the message, $c_i$ as the character in the ith index of
+                      the resulting cipher, and $k_i$ as the character in the ith index of the key, the decryption method is defined by the following:</p>
+
+                  <p>$$m_i = c_i - k_i (mod 26)$$</p>
+
+                  <hr>
+
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-8 mx-auto d-block">
+                              <div class="embed-responsive embed-responsive-16by9">
+                                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <hr>
+
+                  <div id="quiz2" class="list-group col-md">
+                      <h4 class="text-center">Quiz on One Time Pad</h4>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse21">
+                          1. Given $m=$ ENCRYPTION IS COOL, $k=$ ABCABCABCA BC ABCA, can you encrypt the message?
+                      </button>
+                      <div id="collapse21" class="panel-collapse collapse in">
+                          <div class="">The resulting cipher is $c=$ EOERZRTJQN JU CPQL</div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse22">
+                          2. Given $c=$ AAAAA, $k=$ TWPPM, can you decrypt the cipher to find the hidden message?
+                      </button>
+                      <div id="collapse22" class="panel-collapse collapse in">
+                          <div class="">The plaintext message is $m=$ HELLO</div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse23">
+                          3. Given the cipher text in 3, $c=$ AAAAA, how many different key, plaintext message pairs
+                          can be used to map to that cipher text?
+                      </button>
+                      <div id="collapse23" class="panel-collapse collapse in">
+                          <div class="">There are $26^5$ differnt key, plaintext message pairs that can map to the given cipher
+                          text. This is because for every possible message, $m$, there exists a valid key $k$ that maps the message
+                          to the cipher text of $c=$ AAAAA.</div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse24">
+                          4. Can you provide an encrypt implementation?
+                      </button>
+                      <div id="collapse24" class="panel-collapse collapse in">
+                          <div class="">See our implementation <b>HERE</b></div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse25">
+                          5. Can you provide a decrypt implementation?
+                      </button>
+                      <div id="collapse25" class="panel-collapse collapse in">
+                          <div class="">See our implementation <b>HERE</b></div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+          <hr>
+
+          <div id="vigenere" class="list-group col-md">
+
+              <button class="btn btn-light " data-toggle="collapse" data-parent="#vigenere" href="#collapsevigenere"><h2 class="text-center">4.3 - Vigenère Cipher</h2></button>
+
+              <div id="collapsevigenere" class="panel-collapse collapse in">
+
+                  <p>The Vigenère Cipher was proposed by Blaise de Vigenère in the 16th Century. It was in response to noticing that
+                    more simple ciphers, like the Caesar Cipher, can be broken quite easily with longer cipher texts by analyzing the
+                    frequency of letter distributions. So, this was developed to try and stop this problem. The Vigenère Cipher is
+                    regarded as a polyalphabetic substitution cipher because it uses more than one cipher alphabet (whereas the
+                      Caesar Cipher only used one).
+                  </p>
+
+                  <p><b>Encryption: </b>The encryption method is very similar to the one time pad, except the key is
+                    not required to be as long as the message. To make up for this, the key is simply extended to be as
+                    long as the message. If the message is of length 10 and the key is of length 5, then when performing the
+                    encryption, it would follow the same process as the one time pad where the key is simply written two
+                    times to match up with all the letters of the plaintext message.</p>
+
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-8 mx-auto d-block">
+                              <figure class="text-center">
+                                  <img class="img-responsive img-fluid align-content-center" src="crypto-pictures/vigenere.png">
+                                  <figcaption class="figure-caption">Figure 4: Vigenère Cipher Tableau</figcaption>
+                              </figure>
+                          </div>
+                      </div>
+                  </div>
+
+                  <p>So, defining $m_i$ as the character in the ith index of the message, $c_i$ as the character in the ith index of
+                      the resulting cipher, and $k_i$ as the character in the ith index of the key (after the key is extended),
+                      the decryption method is defined by the following:</p>
+
+                  <p>$$c_i = m_i + k_i (mod 26)$$</p>
+
+                  <p><b>Decryption: </b>Given the cipher text and the key, the decryption method is simply the undoing of the encryption method above. </p>
+
+                  <p>So, defining $m_i$ as the character in the ith index of the message, $c_i$ as the character in the ith index of
+                      the resulting cipher, and $k_i$ as the character in the ith index of the key (after extending), the decryption method is defined by the following:</p>
+
+                  <p>$$m_i = c_i - k_i (mod 26)$$</p>
+
+                  <p><b>Cryptanalysis:</b> The cipher at first glance appears to be extremely tough to beat,
+                      but in practice this is not the case. </p>
+
+                  <p>If the key is simply one letter long, then the encryption method
+                      is equivalent to that of the Caesar Cipher which we have seen is very easy to break.</p>
+
+                  <p></p>However, if the key is longer than one, two mathematicians in the early 1900s, Kasiki and Friedman, independently developed mathematical tests
+                    to help determine the length of the key used given only the cipher text. Then, given the length of the key,
+                    the problem is reduced down to a set of Caesar Ciphers which can then be individually broken.</p>
+
+                  <p>In the case of really long keys and keys that are the same length of the plaintext message, it gives the same
+                    security properties as the one time pad.</p>
+
+                  <p><b>The Civil War:</b> The cipher was used in the Civil War by the Confederacy. However, the Confederate leadership who
+                    were sending these encrypted messages liked to repeat the keys that were being used. The three most common keys
+                    that were used were: "MANCHESTER BLUFF", "COMPLETE VICTORY", and "COME RETRIBUTION". The Union was able
+                    to regularly break the codes due to the use of repeated key words. So, much like the one time pad, the
+                    key word should not be used time and time again or else it gives rise to the ability to sense patterns and break
+                      the code more easily.</p>
+
+                  <hr>
+
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-8 mx-auto d-block">
+                              <div class="embed-responsive embed-responsive-16by9">
+                                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <hr>
+
+                  <div id="quiz3" class="list-group col-md">
+                      <h4 class="text-center">Quiz on Vigenère Cipher</h4>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz3" href="#collapse31">
+                          1. Given $m=$ ENCRYPTION IS COOL, $k=$ ABC, can you encrypt the message?
+                      </button>
+                      <div id="collapse31" class="panel-collapse collapse in">
+                          <div class="">The resulting cipher is $c=$ EOERZRTJQN JU CPQL</div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz3" href="#collapse32">
+                          2. Given $c=$ BMQFW, $k=$ THE, can you decrypt the cipher to find the hidden message?
+                      </button>
+                      <div id="collapse32" class="panel-collapse collapse in">
+                          <div class="">The plaintext message is $m=$ HELLO</div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz3" href="#collapse33">
+                          3. Can you provide an encrypt implementation?
+                      </button>
+                      <div id="collapse33" class="panel-collapse collapse in">
+                          <div class="">See our implementation <b>HERE</b></div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz3" href="#collapse34">
+                          4. Can you provide a decrypt implementation?
+                      </button>
+                      <div id="collapse34" class="panel-collapse collapse in">
+                          <div class="">See our implementation <b>HERE</b></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <hr>
+
+          <div id="monoalphasub" class="list-group col-md">
+
+              <button class="btn btn-light " data-toggle="collapse" data-parent="#monoalphasub" href="#collapsemonoalphasub"><h2 class="text-center">4.4 - Monoalphabetic Substitution Cipher</h2></button>
+
+              <div id="collapsemonoalphasub" class="panel-collapse collapse in">
+
+                  <p>The monoalphabetic substitution cipher is a form of a substitution cipher where every instance of a letter
+                    gets mapped to a fixed letter in the cipher.</p>
+
+                  <p><b>Encryption: </b> Given a plaintext message, $m$, every instance of a letter in the plaintext gets mapped to the same letter in the
+                    cipher text. The key, $k$, can be looked at as the map that maps every plaintext letter to a letter in the cipher text.
+                    Look at the following example of a key. In this example, $A$ in the plaintext maps to $B$ in the cipher,
+                      $B$ maps to $H$, $\ldots$, $Z$ maps to $J$.  </p>
+
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-8 mx-auto d-block">
+                              <figure class="text-center">
+                                  <img class="img-responsive img-fluid" src="crypto-pictures/monoalphabetic.png">
+                                  <figcaption class="figure-caption">Figure 5: Monoalphabetic Substitution Cipher Key</figcaption>
+                              </figure>
+                          </div>
+                      </div>
+                  </div>
+
+                  <p>So, if we let the notation $k[\alpha]$ correspond to the cipher text value that corresponds to the plaintext letter
+                    $\alpha$, then the encryption scheme can be denoted by:</p>
+
+                  <p>$$c_i = k[m_i]$$</p>
+
+                  <p><b>Decryption: </b>The decryption scheme is the reverse of the encryption scheme. If we let the notation
+                    $k^{-1}[\alpha]$ correspond to the plaintext letter that corresponds with the cipher text letter $\alpha$, then
+                    the decryption scheme can be denoted by:</p>
+
+                  <p>$$m_i = k^{-1}[c_i]$$</p>
+
+                  <p><b>Cryptanalysis:</b> The key space is extremely large in this encryption method. However, this method
+                    is not entirely secure. This method can fall pray to a letter frequency analysis attack. So, without knowing the key,
+                    it can be possible, in cases of long cipher texts, to analyze the letter frequencies and map the cipher text letters
+                    back to plaintext letters.</p>
+
+                  <p><b>Games:</b> This cipher is commonly used to create cryptogram puzzles. See <a href="https://api.razzlepuzzles.com/cryptogram">HERE</a> for
+                    a chance to try some out! These are able to be done by hand because besides showing a letter frequency analysis, games like these provide
+                    punctuation and give the solver the lengths of the words. This helps the solver easily deduce some of the most common
+                    letters and words and then fill in the rest.</p>
+
+                  <hr>
+
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-8 mx-auto d-block">
+                              <div class="embed-responsive embed-responsive-16by9">
+                                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <hr>
+
+                  <div id="quiz4" class="list-group col-md">
+                      <h4 class="text-center">Quiz on Monoalphabetic Substitution Cipher</h4>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz4" href="#collapse41">
+                          1. Given $m=$ ENCRYPTION IS COOL, and the key is the same as in Figure 5 above, can you encrypt the message?
+                      </button>
+                      <div id="collapse41" class="panel-collapse collapse in">
+                          <div class="">The resulting cipher is $c=$ FNIAGYCRMN RV IMMS</div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz4" href="#collapse42">
+                          2. Given $c=$ IRYPFA,  and the key is the same as in Figure 5 above, can you decrypt the cipher to find the hidden message?
+                      </button>
+                      <div id="collapse42" class="panel-collapse collapse in">
+                          <div class="">The plaintext message is $m=$ CIPHER</div>
+                      </div>
+
+                      <hr>
+
+                      <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz4" href="#collapse43">
+                          3. How many possible keys are there in the monoalphabetic substitution cipher, with $26$ total letters
+                            in the language?
+                      </button>
+                      <div id="collapse43" class="panel-collapse collapse in">
+                          <div class="">There are $26! = (26)\cdot (25) \cdots (1) $ different possible keys. This is because there are $26!$ different
+                            permutations of the alphabet, each of which correspond to a single possible key.</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+        <hr>
+
+        <h1 class="text-center">Section 5 - Public-Key Cryptography</h1>
+
+          <p>Most of the discussion so far has been centered around symmetric-key cryptography. As we have seen, this means that
+            the sender and receiver need a way to securely exchange the key. But, what if this exchange which is a security
+              bottleneck wasn't needed? That is where public-key cryptography comes in.</p>
+
+          <p>With public-key cryptography, the receiver of messages generates a public/private key pair. The public and private
+            key are related under some sort of mathematical operation. But, unlike symmetric key cryptography, both parties (sender and receiver)
+              don't know both of the keys. This is because the receiver publicly posts the public key. Then, any sender can send an
+              encrypted message to the receiver using the public key. Then, the receiver uses their own secret key (which will never be released) to read the
+              originally sent plaintext message. Because the secret key is to be a secret that only the receiver knows, and because the
+            mathematical algorithm to encrypt as well as the public key are made publicly available, it should be
+            nearly impossible to compute the secret key given the public key and the algorithm. This is important because
+            if an attacker were able to figure out the secret key, then they could read any and all messages sent to a particular person or company.</p>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <figure class="text-center">
+                          <img class="img-responsive img-fluid" src="crypto-pictures/publickey.png">
+                          <figcaption class="figure-caption">Figure 6: Public-Key Cryptography Diagram</figcaption>
+                      </figure>
+                  </div>
+              </div>
+          </div>
+
+          <p> Public-Key Cryptography, ever since its initial proposal in 1976, has become the norm for companies around the world.
+            You can go on to websites such as Google and Amazon and take a look at their public keys. To do this,
+            you must click on the lock that is to the left of the URL, then click certificate, then the details tab and lastly
+            the folder that says Public key.</p>
+
+          <div id="pkquiz" class="list-group col-md">
+              <h4 class="text-center">Quiz on Public-Key Cryptography</h4>
+              <button class="btn btn-light" data-toggle="collapse" data-parent="#pkquiz" href="#collapsepk1">
+                  1. Why do you think that Public-Key cryptography is the today's norm as opposed to Symmetric-Key Cryptography?
+              </button>
+              <div id="collapsepk1" class="panel-collapse collapse in">
+                  <div class="">With symmetric key encryption, there needs to be a key exchange. There needs to be a way for
+                    the sender and the receiver to exchange the secret key such that they each know it, but an attacker who
+                    may be listening to the exchanged messages will not be able to figure out the key. Public-Key encryption
+                    protocols allow for confidential messages to be sent without the need of a key exchange.</div>
+              </div>
+          </div>
+
+        <hr>
+
+          <!-- REFERENCES -->
+          <div id="ref" class="list-group col-md">
+              <button class="btn btn-light " data-toggle="collapse" data-parent="#ref" href="#collapseref"><h1>References</h1></button>
+              <div id="collapseref" class="panel-collapse collapse in">
+                  <p>https://www.globalsign.com/en/ssl-information-center/what-is-public-key-cryptography/</p>
+                  <p>https://crypto.interactive-maths.com/monoalphabetic-substitution-ciphers.html</p>
+                  <p>https://www.nku.edu/~christensen/section%2011%20vigenere%20cryptography.pdf</p>
+                  <p>https://us.norton.com/internetsecurity-privacy-what-is-encryption.html</p>
+                  <p>https://www.comparitech.com/blog/information-security/famous-codes-and-ciphers-through-history-and-their-role-in-modern-encryption/</p>
+                  <p>https://pages.mtu.edu/~shene/NSF-4/Tutorial/VIG/Vig-Base.html</p>
+                  <p>http://practicalcryptography.com/ciphers/caesar-cipher/</p>
+                  <p>https://security.blogoverflow.com/2012/08/confidentiality-integrity-availability-the-three-components-of-the-cia-triad/</p>
+                  <p>https://usa.kaspersky.com/resource-center/definitions/what-is-cryptography</p>
+                  <p>https://www.gnupg.org/gph/en/manual/c173.html</p>
+                  <p>https://www.investopedia.com/terms/m/mooreslaw.asp</p>
+                  <p>https://www.ibm.com/support/knowledgecenter/en/SSB23S_1.1.0.14/gtps7/s7symm.html</p>
+                  <p>https://searchsecurity.techtarget.com/definition/one-time-pad</p>
+                  <p>http://user.it.uu.se/~elenaf/Teaching/Krypto2003/vigenere.html</p>
+                  <p>https://www.cryptomuseum.com/crypto/vigenere/</p>
+                  <p>https://www.ssl2buy.com/wiki/symmetric-vs-asymmetric-encryption-what-are-differences</p>
+                  <p>https://www.scienceabc.com/innovation/cracking-the-uncrackable-how-did-alan-turing-and-his-team-crack-the-enigma-code.html</p>
+              </div>
+          </div>
+
+        <hr>
+
+      <!--FOOTER - Pulled from https://mdbootstrap.com/docs/jquery/navigation/footer/-->
+      <footer class="page-footer font-small blue pt-4">
+        <div class="container-fluid text-center text-md-left">
+          <div class="row">
+            <div class="col-md-6 mt-md-0 mt-3">
+              <h5 class="text-uppercase">Hope you enjoyed this section!</h5>
+              <h3>Learning Outcomes:</h3>
+                <p>Basics of Encryption and Decryption</p>
+                <p>Symmetric vs. Public-Key Cryptography</p>
+                <p>Applications of Symmetric-Key Cryptography</p>
+            </div>
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <div class="col-md-6 mb-md-0 mb-3">
+              <h5 class="text-uppercase text-center">Check Out Our Other Content!</h5>
+              <div class="list-group">
+                <a href="./diffie-hellman.html" class="list-group-item list-group-item-action text-center bg-light">Previous Section: Diffie Hellman</a>
+                <a href="./anti-virus-software.html" class="list-group-item list-group-item-action text-center bg-light">Next Section: Anti Virus Software</a>
+                <a href="./about-us.html" class="list-group-item list-group-item-action text-center bg-light">About Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+          <a href="https://github.com/AlexKaracaoglu/security-academy"> Security Academy!</a>
+        </div>
+      </footer>
+
+    </div>
+    </div>
+  </div>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
