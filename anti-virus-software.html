@@ -50,131 +50,136 @@
 
       <div class="container">
 
-        <h1 class="text-center">1.1 - The First Section</h1>
-        <p>How to build a section. Can add different paragraphs</p>
-        <p>And below, this is how you can insert math, if you need to, this uses MathJax</p>
-        <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-        <p>You can insert images below using the following:</p>
+        <h1 class="text-center">Section 1 - Why Do You Need Anti-Virus Software?</h1>
+          <p>A <b>virus</b> is a type of malware that spreads to and infects other systems. They can steal passwords and data,
+              corrupt files, and cause damage to your system. To avoid this problem, anti-virus software is needed to detect
+              viruses and prevent them from harming your system. Below are summaries and videos of the detection techniques
+              that anti-virus software implement. Remember, anti-virus software does not perfectly protect your system from threats.
+              The user needs to be smart when browsing the web.</p>
 
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-                <img class="img-responsive img-fluid" src="./anti-virus-pictures/anti-virus-picture-example.jpg">
-            </div>
-          </div>
-        </div>
-
-        <p>You can insert videos below using the following:</p>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <figure class="text-center">
+                          <img class="img-responsive img-fluid" src="anti-virus-pictures/examples.jpg">
+                          <figcaption class="figure-caption">Figure 1: Anti-Virus Software Companies</figcaption>
+                      </figure>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
 
-        <hr>
+          <hr>
+
+          <h1 class="text-center">Section 2 - Signature-Based Detection</h1>
+
+          <p><b>Signature Based Detection</b> is one of the main techniques in virus detection software. The idea behind it is
+              simple: look for threats that look like previous threats. When a new type of threat appears, a profile, or
+              a signature, is created for this type of threat. This way, a system can find threats that are similar to ones
+              that you already know about. The downside to this method is that there needs to be an initial threat that enters
+              your system before you can have a signature on it. In other words, the signatures that your system has can’t
+              identify unknown threats. At the same time, attackers may be able to change what threats “look like” through
+              polymorphism, as they spread from system to system. This means that a signature-based detection algorithm may
+              not always be useful.</p>
+
+          <hr>
+
+          <h1 class="text-center">Section 3 - Behavioral-Based Detection</h1>
+
+          <p><b>Behavioral-Based Detection</b> is similar to signature-based detection. Instead of looking at signatures, this
+              detection algorithm looks at how a program intends to act upon a system. A program entering a system will be
+              analyzed for any suspicious activity. If the program acts in an abnormal way, it will be labeled malicious.
+              A benefit of this detection algorithm is that it can help to uncover unknown threats; a downside of this algorithm
+              is that some objects may be incorrectly labeled as malicious when they are not.</p>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <figure class="text-center">
+                          <img class="img-responsive img-fluid" src="anti-virus-pictures/attacker.png">
+                          <figcaption class="figure-caption">Figure 2: Attacker Stealing Personal Data</figcaption>
+                      </figure>
+                  </div>
+              </div>
+          </div>
+
+          <hr>
+
+          <h1 class="text-center">Section 3 - Heuristic-Based Detection</h1>
+
+          <p><b>Heuristic-Based Detection</b> looks for threats by searching for specific aspects., such as potentially malicious
+              commands or instructions. Each program is graded based off how dangerous it can be. After a certain threshold,
+              a program is deemed as malicious. The more malicious attributes, such as malicious commands, a program has,
+              the higher its danger. In this algorithm, file analysis, file emulation, and genetic signature detection are used.
+              File analysis looks at the intent of a program; file emulation tests a program in a controlled environment
+              to see what it will do; genetic signature detection compares programs against virus signatures.</p>
+
+          <hr>
+
+          <h1 class="text-center">Section 4 - Cloud-Based Detection</h1>
+
+          <p><b>Cloud-Based Detection</b> uses agent software. Agent software is software that works autonomously to perform a
+              function for another program. Multiple servers and web services help to detect the newest threats in a system.
+              Rather than having the data processing occur locally, the data processing occurs on web services so that the
+              local system does not have to store large amounts of virus information. A client will scan a system for any
+              malware already listed in a web service’s database, saving the local system’s resources.</p>
+
+          <hr>
+
+          <h4 class="text-center">Video on Anti-Virus Software</h4>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+       <hr>
 
       <div id="quiz" class="list-group col-md">
-        <h4 class="text-center">Quiz For Section 1.1</h4>
+            <h4 class="text-center">Quiz On Anti-Virus Software (Still under construction)</h4>
 
-        <hr>
+            <hr>
 
-        <button class="btn btn-light " data-toggle="collapse" data-parent="#quiz" href="#collapse1">
-          Question Number 1 </button>
-        <div id="collapse1" class="panel-collapse collapse in">
-          <div class="">The answer to Question 1. We can even put math in here: \(ax^2 + bx + c = 0\) </div>
-        </div>
-
-        <hr>
-
-        <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse2">
-          Question Number 2</button>
-        <div id="collapse2" class="panel-collapse collapse in">
-          <div class="">The answer to Question 2</div>
-        </div>
-
-        <hr>
-
-        <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse3">
-          Question Number 3</button>
-        <div id="collapse3" class="panel-collapse collapse in">
-          <div class="">The answer to Question 3</div>
-        </div>
-
-        <hr>
-
-        <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse4">
-          Question Number 4</button>
-        <div id="collapse4" class="panel-collapse collapse in">
-          <div class="">The answer to Question 4</div>
-        </div>
-        </div>
-
-        <hr>
-
-
-        <h1 class="text-center">1.2 - The Second Section</h1>
-        <p>How to build another section</p>
-
-        <p>You can insert images below using the following:</p>
-
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-              <img class="img-responsive img-fluid" src="./anti-virus-pictures/anti-virus-picture-example.jpg">
+            <button class="btn btn-light " data-toggle="collapse" data-parent="#quiz" href="#collapse1">
+              What is a virus? </button>
+            <div id="collapse1" class="panel-collapse collapse in">
+              <div class="">Answer still under construction...</div>
             </div>
-          </div>
-        </div>
 
-        <p>You can insert videos below using the following:</p>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
-              </div>
+            <hr>
+
+            <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse2">
+              What is the difference between signature and behavioral based detection?</button>
+            <div id="collapse2" class="panel-collapse collapse in">
+              <div class="">Answer still under construction...</div>
             </div>
-          </div>
-        </div>
 
-        <hr>
+            <hr>
 
-        <div id="quiz2" class="list-group col-md">
-          <h4 class="text-center">Quiz For Section 1.2</h4>
+            <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse3">
+              Why would you want to use cloud based detection?</button>
+            <div id="collapse3" class="panel-collapse collapse in">
+              <div class="">Answer still under construction...</div>
+            </div>
 
-          <hr>
+            <hr>
 
-          <button class="btn btn-light " data-toggle="collapse" data-parent="#quiz2" href="#collapse1-2">
-            Question Number 1 </button>
-          <div id="collapse1-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 1. We can even put math in here: \(ax^2 + bx + c = 0\) </div>
-          </div>
-
-          <hr>
-
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse2-2">
-            Question Number 2</button>
-          <div id="collapse2-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 2</div>
-          </div>
+            <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse4">
+              Does anti-virus protect your system perfectly?</button>
+            <div id="collapse4" class="panel-collapse collapse in">
+              <div class="">Answer still under construction...</div>
+            </div>
 
           <hr>
 
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse3-2">
-            Question Number 3</button>
-          <div id="collapse3-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 3</div>
-          </div>
-
-          <hr>
-
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse4-2">
-            Question Number 4</button>
-          <div id="collapse4-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 4</div>
+          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse5">
+              What is the weakest link when it comes to protecting yourself online?</button>
+          <div id="collapse5" class="panel-collapse collapse in">
+              <div class="">Answer still under construction...</div>
           </div>
         </div>
 
@@ -184,12 +189,19 @@
         <div id="ref" class="list-group col-md">
           <button class="btn btn-light " data-toggle="collapse" data-parent="#ref" href="#collapseref"><h1>References</h1></button>
           <div id="collapseref" class="panel-collapse collapse in">
-            <p>Can put links here</p>
+              <p>https://whatis.techtarget.com/definition/software-agent</p>
+              <p>https://www.techopedia.com/definition/24595/software-agent</p>
+              <p>https://computer.howstuffworks.com/cloud-computing/cloud-antivirus.htm</p>
+              <p>https://securebox.comodo.com/cloud-based-scanning/cloud-based-virus-scanner/</p>
+              <p>https://securebox.comodo.com/cloud-based-scanning/cloud-based-malware-detection/</p>
+              <p>https://www.forcepoint.com/cyber-edu/heuristic-analysis</p>
+              <p>https://www.infosecurity-magazine.com/opinions/malware-detection-signatures/</p>
+              <p>https://bricata.com/blog/signature-detection-vs-network-behavior/</p>
+              <p>https://www.infosecurity-magazine.com/opinions/malware-detection-signatures/</p>
           </div>
         </div>
 
         <hr>
-
 
       <!--FOOTER - Pulled from https://mdbootstrap.com/docs/jquery/navigation/footer/-->
       <footer class="page-footer font-small blue pt-4">
