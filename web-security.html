@@ -50,21 +50,10 @@
 
       <div class="container">
 
-        <h1 class="text-center">1.1 - The First Section</h1>
-        <p>How to build a section. Can add different paragraphs</p>
-        <p>And below, this is how you can insert math, if you need to, this uses MathJax</p>
-        <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-        <p>You can insert images below using the following:</p>
+        <h1 class="text-center">Section 1 - What is web security?</h1>
 
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-                <img class="img-responsive img-fluid" src="./web-security-pictures/web-security-picture-example.jpg">
-            </div>
-          </div>
-        </div>
+        <h4 class="text-center">Video on Introduction to Web Security</h4>
 
-        <p>You can insert videos below using the following:</p>
         <div class="container">
           <div class="row">
             <div class="col-sm-8 mx-auto d-block">
@@ -77,58 +66,29 @@
 
         <hr>
 
-      <div id="quiz" class="list-group col-md">
-        <h4 class="text-center">Quiz For Section 1.1</h4>
+        <p><b>Web security </b>is the act of protecting websites from attacks such as unauthorized
+          access, modification, disruption, or destruction of data. On a number of occasions, websites will go
+          down because of these attacks, and in some cases confidential
+          user data is leaked to the public, exposing these users to risks. </p>
 
-        <hr>
+        <p>Good website security requires an effort throughout the entire website: whether it is the web application
+          itself, the configuration of the web server, or front-facing code. Even something like policies for confidential
+          passwords creation or renewal plays a huge role in effective website security. </p>
 
-        <button class="btn btn-light " data-toggle="collapse" data-parent="#quiz" href="#collapse1">
-          Question Number 1 </button>
-        <div id="collapse1" class="panel-collapse collapse in">
-          <div class="">The answer to Question 1. We can even put math in here: \(ax^2 + bx + c = 0\) </div>
-        </div>
-
-        <hr>
-
-        <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse2">
-          Question Number 2</button>
-        <div id="collapse2" class="panel-collapse collapse in">
-          <div class="">The answer to Question 2</div>
-        </div>
-
-        <hr>
-
-        <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse3">
-          Question Number 3</button>
-        <div id="collapse3" class="panel-collapse collapse in">
-          <div class="">The answer to Question 3</div>
-        </div>
-
-        <hr>
-
-        <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse4">
-          Question Number 4</button>
-        <div id="collapse4" class="panel-collapse collapse in">
-          <div class="">The answer to Question 4</div>
-        </div>
-        </div>
+        <p>There are many ways to enable effective web security. Usually, if one is using a server-side web framework,
+          effective defense mechanisms against common attacks are enabled. Configuring a web server by enabling HTTPS,
+          for example, can help mitigate any other attacks that might occur.</p>
 
         <hr>
         
-        <h1 class="text-center">1.2 - The Second Section</h1>
-        <p>How to build another section</p>
+        <h1 class="text-center">Section 2 - Common Website Threats</h1>
 
-        <p>You can insert images below using the following:</p>
+        <p>This section will outline some of the most common threats to web security.</p>
 
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-              <img class="img-responsive img-fluid" src="./web-security-pictures/web-security-picture-example.jpg">
-            </div>
-          </div>
-        </div>
+        <h2 class="text-center">2.1 - Cross-Site Scripting (XSS)</h2>
 
-        <p>You can insert videos below using the following:</p>
+        <h4 class="text-center">Video on Cross-Site Scripting (XSS)</h4>
+
         <div class="container">
           <div class="row">
             <div class="col-sm-8 mx-auto d-block">
@@ -141,41 +101,199 @@
 
         <hr>
 
-        <div id="quiz2" class="list-group col-md">
-          <h4 class="text-center">Quiz For Section 1.2</h4>
+        <p><b>XSS</b> is a category of attacks that allow an attacker to put client-side scripts through the websites into the
+          browsers of other users. Since this code travels from the website itself into the browser, the code is usually
+          trusted and has the ability to do a variety of things. For example, it can send a user’s authorization cookie to
+          the attacker, which allows them to log into another website as if they were the user themselves. This gives the
+          attacker the ability to do anything that the user would be able to do, such as access their bank account, their
+          email, and other things.</p>
 
-          <hr>
+        <p>XSS vulnerabilities are the most common security threat.</p>
 
-          <button class="btn btn-light " data-toggle="collapse" data-parent="#quiz2" href="#collapse1-2">
-            Question Number 1 </button>
-          <div id="collapse1-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 1. We can even put math in here: \(ax^2 + bx + c = 0\) </div>
-          </div>
+        <p>XSS vulnerabilities are <b>reflected</b> and <b>persistent</b>, depending on how the site returns the code to the browser.</p>
 
-          <hr>
+        <p><b>Reflected </b>XSS vulnerability occurs when user content to the server is returned immediately and unmodified
+          in the browser. </p>
 
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse2-2">
-            Question Number 2</button>
-          <div id="collapse2-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 2</div>
-          </div>
+        <p>For example, an attacker can construct a search link that contains malicious script as a parameter and email
+          it to a user. If the user clicks this link, the script will be executed as the page loads. This would then
+          give the attacker all the information they need to impersonate the user, being able to access any confidential
+          or sensitive data belonging to them.</p>
 
-          <hr>
+        <p><b>Persistent </b> XSS vulnerability occurs when the malicious script is stored on the website and then redisplayed
+          later, seemingly unmodified, for other users to execute. </p>
 
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse3-2">
-            Question Number 3</button>
-          <div id="collapse3-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 3</div>
-          </div>
+        <p>For example, a discussion board that allows for unmodified HTML in the comment section could store a malicious
+          script. When the comment is displayed, the script is executed and can send the users’ information to the attacker. </p>
 
-          <hr>
+        <p>This attack is popular and powerful, since the attacker might not even engage directly with any of the users
+          they are targeting.</p>
 
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse4-2">
-            Question Number 4</button>
-          <div id="collapse4-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 4</div>
+        <p><b>Most common vulnerable data: </b>Data from POST or GET requests is most common for XSS vulnerabilities.
+          However, any data from a browser is vulnerable, whether it’s uploaded user files or cookie data.</p>
+
+        <p><b>Defense against XSS vulnerabilities:</b></p>
+
+        <p>Remove or disable any markup that could contain instructions to run code - in HTML, this includes elements
+          such as <i>script, object, embed and link </i>.</p>
+
+        <p>Modifying user data so it can’t be used to run scripts is known as <b>input sanitization</b>. Many web frameworks
+          sanitize user input by default.</p>
+
+        <hr>
+
+        <h2 class="text-center">2.2 - SQL Injection</h2>
+
+        <h4 class="text-center">Video on SQL Injection</h4>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 mx-auto d-block">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+              </div>
+            </div>
           </div>
         </div>
+
+        <hr>
+
+        <p><b>SQL injection</b> vulnerabilities give attackers the ability to execute SQL code on a database, allowing
+          data access, modification, or deletion regardless of the attacker’s permissions. Successful attacks might utilize
+          a hoax identity, create new identities with administration rights, access all the data on the server, or modify the
+          data to make it unusable. </p>
+
+        <p>There are many different types of SQL injections: error based, boolean errors, time-based</p>
+
+        <p><b>How they occur:</b> SQL injection vulnerabilities become present if user input that is passed into a
+          query changes the meaning of the statement. To avoid this sort of attack, it needs to be ensured that user
+          data passed into the query can’t change the nature of it.</p>
+
+        <p>One way to do this is to <b>escape</b> the characters in user input that have a special meaning in SQL.
+          Web frameworks often just take care of character escaping. </p>
+
+        <hr>
+
+        <h2 class="text-center">2.3 - Cross-Site Request Forgery (CSRF)</h2>
+
+        <h4 class="text-center">Video on Cross-Site Request Forgery (CSRF)</h4>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 mx-auto d-block">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <p><b>CSRF</b> attacks allow a malicious attacker to execute actions using credentials of a user without the user’s
+          knowledge or consent.</p>
+
+        <p>For example, if an attacker knows a site that allows logged-in users to send money to other specific accounts by using
+          an HTTP POST request, they can construct a form that includes their bank details and an amount of money as hidden
+          details to email to other users with a submit button. If the user clicks the submit button, a POST request will
+          be sent containing the transaction details and any cookies — the server checks the cookies, and if the user is
+          logged in to the site, the transaction will be completed. </p>
+
+        <p><b>Prevention: </b>A way to prevent this attack is for the server to require that POST requests include a
+          user-specific site-generated secret. This secret would be supplied by the server when sending the web form -
+          therefore the attacker would not be able to create their own form. </p>
+
+        <p><b>Note: </b>Modern web frameworks usually include CSRF prevention mechanisms.</p>
+
+        <hr>
+
+        <h2 class="text-center">2.4 - Other Attacks </h2>
+
+        <p>This section will overview some other attacks and threats to web security.</p>
+
+        <h4 class="text-center">Video on Various Other Attacks</h4>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 mx-auto d-block">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <p><b>Clickjacking: </b>An attacker routes clicks meant for a top level site to a hidden page underneath. For
+          example, site might look like a legitimate bank site but only looks like it; captures login information that
+          the attacker can use </p>
+
+        <p><b>Denial of Service (DoS): </b>DoS is achieved by flooding a site with fake requests so that legitimate users
+          can’t access the site. There might just be numerous requests or might consume large amounts of resources. Defenses
+          usually identify and block malicious traffic while allowing legitimate messages through.</p>
+
+        <p><b>Directory Traversal: </b>Attacker tries to access parts of the server file system that they shouldn’t be able
+          to access - occurs when the user is able to pass filenames that include file system navigation characters. A solution
+          to protecting against this type of attack is to sanitize the input.</p>
+
+        <p><b>File Inclusion: </b>Attacker is able to specify an “unintended” file for display and when file is loaded,
+          it might be executed on the web server or client side. A solution
+          to protecting against this type of attack is to sanitize the input.</p>
+
+        <p><b>Command injection: </b>Allows attacker to execute arbitrary system commands on the host operating system.
+          it might be executed on the web server or client side. A solution to protecting against this type of attack
+          is to sanitize the input.</p>
+
+        <p><b>General Points: </b>Most of these attacks are successful when a web application trusts the data coming from
+          a browser. So, the best way to protect yourself from a variety of attacks is to sanitize all user-originating data
+          before it’s displayed in the browser, used in SQL queries, or passed to an operating system or file system call.</p>
+
+        <hr>
+
+        <h1 class="text-center">Section 3 - Mozilla Web Development Network’s Recommended Concrete Steps</h1>
+
+        <h4 class="text-center">Video on Recommended Steps / Conclusion</h4>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 mx-auto d-block">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <p>To outline what was presented in the video, here are a few key points to keep in mind in order to identify and patch some
+          vulnerabilities to your website and web services:</p>
+
+        <ol>
+
+          <li>Use more effective password management - encourage strong passwords and the practice of changing it regularly,
+            two factor authentication.</li>
+
+          <p></p>
+
+          <li>Configure web server to use HTTPS and HSTS. HTTPS encrypts data sent between client and server - ensures that
+            credentials, cookies, POST requests data and header information are not easily available to attackers.</li>
+
+          <p></p>
+
+          <li>Keep track of the most popular threats (OWASP list), and address most common vulnerabilities first.</li>
+
+          <p></p>
+
+          <li>Use vulnerability scanning tools to try and pinpoint the weaknesses of yuor system.</li>
+
+          <p></p>
+
+          <li>Only store and display data that you need. For example, only show the last 4 digits of a credit card number,
+            enough for the user to recognize stored information.</li>
+
+        </ol>
 
         <hr>
 
@@ -183,7 +301,7 @@
         <div id="ref" class="list-group col-md">
           <button class="btn btn-light " data-toggle="collapse" data-parent="#ref" href="#collapseref"><h1>References</h1></button>
           <div id="collapseref" class="panel-collapse collapse in">
-            <p>Can put links here</p>
+            <p>https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Website_security </p>
           </div>
         </div>
 
@@ -196,7 +314,7 @@
           <div class="row">
             <div class="col-md-6 mt-md-0 mt-3">
               <h5 class="text-uppercase">Hope you enjoyed this section!</h5>
-              <p>We can put more things here</p>
+              <p>We can put more things here later</p>
             </div>
             <hr class="clearfix w-100 d-md-none pb-3">
             <div class="col-md-6 mb-md-0 mb-3">
