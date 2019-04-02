@@ -128,7 +128,7 @@
                   <div class="col-sm-8 mx-auto d-block">
                       <figure class="text-center">
                           <img class="img-responsive img-fluid" src="crypto-pictures/skytale.png">
-                          <figcaption class="figure-caption">Figure 1: Skytale Diagram</figcaption>
+                          <figcaption class="figure-caption">Figure 1: Skytale</figcaption>
                       </figure>
                   </div>
               </div>
@@ -350,6 +350,24 @@
                       the resulting cipher, and $k_i$ as the character in the ith index of the key, the decryption method is defined by the following:</p>
 
                   <p>$$m_i = c_i - k_i (mod 26)$$</p>
+
+                  <p><b>Cryptanalysis: </b>The one time pad is an unbreakable encryption method when implemented effectively.
+                    By this, there are some actions that the users may do that will impact how secure the method is. Let's
+                      assume that the actual key exchange is perfectly secure and look at what may impact the confidentiality
+                      of the method. </p>
+
+                  <p>First, the key (or pad), due to the name of the encryption method, should only be used once. If the pad is used
+                    more than once, then then there is a higher probability that attackers can run some sort of attack that can reveal
+                    portions, if not all, of the message. The details of this type of attack can be abstracted away from, however,
+                      it is important to remember that in order to provide the highest level of safety, a pad should only
+                    be used once.</p>
+
+                  <p>Second, the key or pad should be truly random. That is, it is best to randomly choose the characters in the pad instead of using
+                    common words or phrases. Again, the details of the implications of choosing a non-random pad are not entirely
+                    important for our purposes, but, just understand that the best and most secure pads are as close to random
+                    as possible.</p>
+
+                  <p></p>
 
                   <hr>
 
@@ -666,10 +684,25 @@
               </div>
           </div>
 
-          <p> Public-Key Cryptography, ever since its initial proposal in 1976, has become the norm for companies around the world.
-            You can go on to websites such as Google and Amazon and take a look at their public keys. To do this,
+          <p> Public-Key Cryptography, ever since its initial proposal in 1976, has become the norm for companies around the world.</p>
+
+          <p><b>Advantages: </b> There are definitely advantages of public key encryption over symmetric key encryption. First of all, because
+            people encrypt their messages using the intended receiver's public key, there is no longer a need to hold on to the secret keys of
+            several people. This makes communication easier because you do not need to search around for a private key for the intended receiver,
+            you can just look at the receiver and pull it from what they are posting. Also, only the intended receiver is able to
+            decrypt a sent message. This is also the goal of secret key cryptography, but the exchange of the key can be an insecure
+            bottle-neck if not implemented effectively. And, if not implemented effectively, then this could lead to a leaked private key. With public
+            key cryptography however, there is no key exchange process which allows for a streamlined process for two people to
+            communicate who have never communicated before.</p>
+
+          <p><b>Disadvantages: </b>One of the biggest disadvantages of public key encryption algorithms, due to the public nature of the encryption key,
+              are computationally more expensive. So, this means that the time it takes to encrypt/decrypt some data takes
+              longer in public key systems.</p>
+
+          <p><b>Try This: </b>You can go on to websites such as Google and Amazon and take a look at their public keys. To do this,
             you must click on the lock that is to the left of the URL, then click certificate, then the details tab and lastly
-            the folder that says Public key.</p>
+            the folder that says Public key. These companies use different versions of public key cryptography, but it is
+            important to recognize that the public key is really posted and all of us are able to see it.</p>
 
           <div id="pkquiz" class="list-group col-md">
               <h4 class="text-center">Quiz on Public-Key Cryptography</h4>
@@ -681,6 +714,21 @@
                     the sender and the receiver to exchange the secret key such that they each know it, but an attacker who
                     may be listening to the exchanged messages will not be able to figure out the key. Public-Key encryption
                     protocols allow for confidential messages to be sent without the need of a key exchange.</div>
+              </div>
+
+              <hr>
+
+              <button class="btn btn-light" data-toggle="collapse" data-parent="#pkquiz" href="#collapsepk2">
+                  2. After doing the activity above labeled <b>Try This</b>, you observed a public key that is extremely
+                    large. Why do you think the public keys are so large?
+              </button>
+              <div id="collapsepk2" class="panel-collapse collapse in">
+                  <div class="">Because the public key and private key are related by some mathematical operation, you must be sure
+                    that there is no way an attacker could quickly arrive at the private key using the public key. If this were possible then
+                    the attacker could read all encrypted messages sent to the receiever. So, the public key needs to be extremely large
+                    in order to mask the private key so that the attacker could not efficiently arrive at it. For more information,
+                    look at the following <a href="http://www.csc.villanova.edu/~mdamian/Past/csc3990fa08/csrs2007/01-pp1-7-MattBlumenthal.pdf">paper</a>,
+                      especially section 3.3 entitled "Weaknesses".</div>
               </div>
           </div>
 
@@ -707,6 +755,8 @@
                   <p>https://www.cryptomuseum.com/crypto/vigenere/</p>
                   <p>https://www.ssl2buy.com/wiki/symmetric-vs-asymmetric-encryption-what-are-differences</p>
                   <p>https://www.scienceabc.com/innovation/cracking-the-uncrackable-how-did-alan-turing-and-his-team-crack-the-enigma-code.html</p>
+                  <p>http://www.csc.villanova.edu/~mdamian/Past/csc3990fa08/csrs2007/01-pp1-7-MattBlumenthal.pdf</p>
+                  <p>https://case.edu/affil/sigmaxi/files/CryptoslidesSinger.pdf</p>
               </div>
           </div>
 
