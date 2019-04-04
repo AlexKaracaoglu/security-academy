@@ -50,85 +50,36 @@
 
       <div class="container">
 
-        <h1 class="text-center">1.1 - The First Section</h1>
-        <p>How to build a section. Can add different paragraphs</p>
-        <p>And below, this is how you can insert math, if you need to, this uses MathJax</p>
-        <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-        <p>You can insert images below using the following:</p>
+        <h1 class="text-center">Diffie Hellman Key Exchange</h1>
 
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-                <img class="img-responsive img-fluid" src="./diffie-hellman-pictures/diffie-hellman-picture-example.jpg">
-            </div>
-          </div>
-        </div>
+        <p>In this section we want to introduce you to a key exchange protocol called Diffie Hellman.</p>
 
-        <p>You can insert videos below using the following:</p>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
+        <p><b>Diffie-Hellman Key Exchange</b> is an algorithm that uses a public channel to send a shared secret message between two users.</p>
 
-        <hr>
+        <p><b>Motivation: </b>Suppose two users, Bob and Alice, are trying to send a private message to one another. They
+          want to establish some shared secret value between each other. However, attackers may be listening in on the messages sent
+          between Bob and Alice. So, the question is, how can Bob and Alice agree on a value, but an attacker listening on the
+          exchanged messages not be able to figure out the shared value? Well, that is where the Diffie Hellman Key Exchange
+          protocol comes in.</p>
 
-      <div id="quiz" class="list-group col-md">
-        <h4 class="text-center">Quiz For Section 1.1</h4>
+        <p><b>General Idea: </b>Bob and Alice have to use a math function that is easy to solve in one direction and difficult
+          to solve in the reverse direction to agree on a shared secret value (a key). Bob and Alice first agree on some initial values
+          and a math function that are published for all to see.  Then, both Alice and Bob choose a secret value and substitute it into the function
+          and then send their total value to the other. Then, with the public total they receive, along with the private value,
+          they are able to agree on a shared secret key. A more in depth discussion on how exactly this works will be
+          broken down in the video below.</p>
+
+        <p><b>Man in the Middle Attack: </b>As we said above, an attacker is able to listen to all the messages that are being
+          sent between Alice and Bob. So, the question is, could the attacker pretend to be Bob and end up sharing a secret key with
+          Alice? Likewise, could the attacker pretend to be Alice and end up sharing a secret key with
+          Bob? The answer is yes, and this is the essence of a man in the middle attack for Diffie Hellman. Then, with this secret
+          key, the attacker could talk to both Alice and Bob and neither would know for sure that this attack is happeening.
+          More information on this will be discussed in the following video.</p>
 
         <hr>
 
-        <button class="btn btn-light " data-toggle="collapse" data-parent="#quiz" href="#collapse1">
-          Question Number 1 </button>
-        <div id="collapse1" class="panel-collapse collapse in">
-          <div class="">The answer to Question 1. We can even put math in here: \(ax^2 + bx + c = 0\) </div>
-        </div>
+        <h4 class="text-center">Video on Diffie Hellman Key Exchange</h4>
 
-        <hr>
-
-        <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse2">
-          Question Number 2</button>
-        <div id="collapse2" class="panel-collapse collapse in">
-          <div class="">The answer to Question 2</div>
-        </div>
-
-        <hr>
-
-        <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse3">
-          Question Number 3</button>
-        <div id="collapse3" class="panel-collapse collapse in">
-          <div class="">The answer to Question 3</div>
-        </div>
-
-        <hr>
-
-        <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse4">
-          Question Number 4</button>
-        <div id="collapse4" class="panel-collapse collapse in">
-          <div class="">The answer to Question 4</div>
-        </div>
-        </div>
-
-        <hr>
-
-        <h1 class="text-center">1.2 - The Second Section</h1>
-        <p>How to build another section</p>
-
-        <p>You can insert images below using the following:</p>
-
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-              <img class="img-responsive img-fluid" src="./diffie-hellman-pictures/diffie-hellman-picture-example.jpg">
-            </div>
-          </div>
-        </div>
-
-        <p>You can insert videos below using the following:</p>
         <div class="container">
           <div class="row">
             <div class="col-sm-8 mx-auto d-block">
@@ -141,39 +92,41 @@
 
         <hr>
 
-        <div id="quiz2" class="list-group col-md">
-          <h4 class="text-center">Quiz For Section 1.2</h4>
+        <div id="quizdh" class="list-group col-md">
+          <h4 class="text-center">Quiz For Diffie Hellman Key Exchange</h4>
+
+          <h4 class="text-center">(Still Under Construction...)</h4>
 
           <hr>
 
-          <button class="btn btn-light " data-toggle="collapse" data-parent="#quiz2" href="#collapse1-2">
+          <button class="btn btn-light " data-toggle="collapse" data-parent="#quizdh" href="#collapse1">
             Question Number 1 </button>
-          <div id="collapse1-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 1. We can even put math in here: \(ax^2 + bx + c = 0\) </div>
+          <div id="collapse1" class="panel-collapse collapse in">
+            <div class="">Answer is still under construction...</div>
           </div>
 
           <hr>
 
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse2-2">
+          <button class="btn btn-light" data-toggle="collapse" data-parent="#quizdh" href="#collapse2">
             Question Number 2</button>
-          <div id="collapse2-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 2</div>
+          <div id="collapse2" class="panel-collapse collapse in">
+            <div class="">Answer is still under construction...</div>
           </div>
 
           <hr>
 
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse3-2">
+          <button class="btn btn-light" data-toggle="collapse" data-parent="#quizdh" href="#collapse3">
             Question Number 3</button>
-          <div id="collapse3-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 3</div>
+          <div id="collapse3" class="panel-collapse collapse in">
+            <div class="">Answer is still under construction...</div>
           </div>
 
           <hr>
 
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse4-2">
+          <button class="btn btn-light" data-toggle="collapse" data-parent="#quizdh" href="#collapse4">
             Question Number 4</button>
-          <div id="collapse4-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 4</div>
+          <div id="collapse4" class="panel-collapse collapse in">
+            <div class="">Answer is still under construction...</div>
           </div>
         </div>
 
