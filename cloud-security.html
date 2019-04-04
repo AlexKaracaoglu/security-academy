@@ -50,133 +50,130 @@
 
       <div class="container">
 
-        <h1 class="text-center">1.1 - The First Section</h1>
-        <p>How to build a section. Can add different paragraphs</p>
-        <p>And below, this is how you can insert math, if you need to, this uses MathJax</p>
-        <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-        <p>You can insert images below using the following:</p>
+        <h1 class="text-center">Section 1 - Traditional Security vs Cloud Security</h1>
 
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-                <img class="img-responsive img-fluid" src="./cloud-security-pictures/cloud-security-picture-example.jpg">
-            </div>
-          </div>
-        </div>
+        <p><b>Motivation: </b>Cloud security involves a set of defensive methods placed in order to protect data stored
+            in cloud systems from breaches and data loss. Many modern companies and enterprises are shifting their structure
+            to the cloud model. As it grows more and more popular, security becomes more of a pressing matter to address. </p>
 
-        <p>You can insert videos below using the following:</p>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+        <p>The cloud infrastructure proposes unique security challenges from traditional infrastructures. Traditional
+            systems usually rely on perimeter security protocol. Perimeter security is a set of physical and programmatic
+            security policies that provide levels of protection on a conceptual borderline against remote malicious activity.
+            Traditionally, it is believed that any connectivity to systems or organizations outside of an organization provides
+            an opening for unauthorized entities to gain access or tamper with information resources. Upon this defined
+            conceptual boundary, security controls were deployed to protect the data within it. However, in a cloud computing
+            model, there is no defined perimeter, weakening the effectiveness of this measure. </p>
+
+          <hr>
+
+        <h1 class="text-center">Section 2 - Components in Cloud Security: Trust</h1>
+
+        <p>Trust in a cloud environment depends heavily on the selected deployment model (Saas, Paas, Laas). In the case
+            of public or community clouds, control is delegated to the organization owning the infrastructure. When
+            deploying on a public cloud, control is mitigated to the infrastructure owner to enforce a sufficient security
+            policy that guarantees that appropriate security activities are being performed to ensure that risk is reduced.
+            This introduces a number of risks and threats, as essentially security is related to trusting the processes
+            and computing base implemented by the cloud owner. It is crucial to differentiate between deployment models,
+            as a private cloud, where the infrastructure is operated and managed on premise by a private organization,
+            does not introduce additional unique security challenges, as trust remains within the organization.
+            In such a situation, the infrastructures owner remains the data and process owner.</p>
+
+          <hr>
+
+        <h1 class="text-center">Section 3 - Components in Cloud Security: Trust</h1>
+
+        <p>This section will provide an overview of different ways you can manage security in the cloud. Be sure to check out
+            the videos for a more in depth look at these different methods!</p>
+
+        <p><b>Firewalls </b>protect the perimeter of your network security and your end users. Firewalls also safeguard
+            traffic between different apps stored in the cloud.</p>
+
+        <p><b>Access controls </b> protect data by allowing you to set access lists for different assets. For instance,
+            you might allow specific employees application access, while restricting others. A general rule is to provide
+            employees’ access to only the tools they need to do their job. By maintaining strict access control, you can
+            keep critical documents from malicious insiders or hackers with stolen credentials.</p>
+
+          <hr>
+
+          <h4 class="text-center">Video on Firewalls and Access Controls</h4>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
 
-        <hr>
+          <hr>
 
-      <div id="quiz" class="list-group col-md">
-        <h4 class="text-center">Quiz For Section 1.1</h4>
+          <p><b>Data masking</b> encrypts identifiable information, such as names.
+              This maintains data integrity by keeping important information private. With data masking, a medical
+              company can share data without violating HIPAA laws, for example. Be sure to see our section on
+            <a href="./crypto.html">Cryptography</a> to learn more about encryption!</p>
 
-        <hr>
+          <p><b>Threat intelligence</b> spots security threats and ranks them in order of importance. This feature helps you
+              protect mission-critical assets from threats.</p>
 
-        <button class="btn btn-light " data-toggle="collapse" data-parent="#quiz" href="#collapse1">
-          Question Number 1 </button>
-        <div id="collapse1" class="panel-collapse collapse in">
-          <div class="">The answer to Question 1. We can even put math in here: \(ax^2 + bx + c = 0\) </div>
-        </div>
+          <p><b>Disaster recovery</b> provides flexible and reliable failover for required services in the event of any service
+              interruptions, including those caused by natural or man-made disasters or disruptions. This makes use of the
+              cloud's flexibility to minimize cost and maximize benefits.</p>
 
-        <hr>
+          <hr>
 
-        <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse2">
-          Question Number 2</button>
-        <div id="collapse2" class="panel-collapse collapse in">
-          <div class="">The answer to Question 2</div>
-        </div>
+          <h4 class="text-center">Video on Data Masking, Threat Intelligence and Disaster Recovery</h4>
 
-        <hr>
-
-        <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse3">
-          Question Number 3</button>
-        <div id="collapse3" class="panel-collapse collapse in">
-          <div class="">The answer to Question 3</div>
-        </div>
-
-        <hr>
-
-        <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse4">
-          Question Number 4</button>
-        <div id="collapse4" class="panel-collapse collapse in">
-          <div class="">The answer to Question 4</div>
-        </div>
-        </div>
-
-        <hr>
-
-
-        <h1 class="text-center">1.2 - The Second Section</h1>
-        <p>How to build another section</p>
-
-        <p>You can insert images below using the following:</p>
-
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-              <img class="img-responsive img-fluid" src="./cloud-security-pictures/cloud-security-picture-example.jpg">
-            </div>
-          </div>
-        </div>
-
-        <p>You can insert videos below using the following:</p>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 mx-auto d-block">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+                      </div>
+                  </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <hr>
-
-        <div id="quiz2" class="list-group col-md">
-          <h4 class="text-center">Quiz For Section 1.2</h4>
-
-          <hr>
-
-          <button class="btn btn-light " data-toggle="collapse" data-parent="#quiz2" href="#collapse1-2">
-            Question Number 1 </button>
-          <div id="collapse1-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 1. We can even put math in here: \(ax^2 + bx + c = 0\) </div>
           </div>
 
           <hr>
 
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse2-2">
-            Question Number 2</button>
-          <div id="collapse2-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 2</div>
+          <div id="quizcloud" class="list-group col-md">
+              <h4 class="text-center">Quiz For Cloud Security</h4>
+
+              <h4 class="text-center">(Still Under Construction...)</h4>
+
+              <hr>
+
+              <button class="btn btn-light " data-toggle="collapse" data-parent="#quizcloud" href="#collapse1">
+                  Question Number 1 </button>
+              <div id="collapse1" class="panel-collapse collapse in">
+                  <div class="">Answer is still under construction...</div>
+              </div>
+
+              <hr>
+
+              <button class="btn btn-light" data-toggle="collapse" data-parent="#quizcloud" href="#collapse2">
+                  Question Number 2</button>
+              <div id="collapse2" class="panel-collapse collapse in">
+                  <div class="">Answer is still under construction...</div>
+              </div>
+
+              <hr>
+
+              <button class="btn btn-light" data-toggle="collapse" data-parent="#quizcloud" href="#collapse3">
+                  Question Number 3</button>
+              <div id="collapse3" class="panel-collapse collapse in">
+                  <div class="">Answer is still under construction...</div>
+              </div>
+
+              <hr>
+
+              <button class="btn btn-light" data-toggle="collapse" data-parent="#quizcloud" href="#collapse4">
+                  Question Number 4</button>
+              <div id="collapse4" class="panel-collapse collapse in">
+                  <div class="">Answer is still under construction...</div>
+              </div>
           </div>
-
-          <hr>
-
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse3-2">
-            Question Number 3</button>
-          <div id="collapse3-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 3</div>
-          </div>
-
-          <hr>
-
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz2" href="#collapse4-2">
-            Question Number 4</button>
-          <div id="collapse4-2" class="panel-collapse collapse in">
-            <div class="">The answer to Question 4</div>
-          </div>
-        </div>
 
         <hr>
 
