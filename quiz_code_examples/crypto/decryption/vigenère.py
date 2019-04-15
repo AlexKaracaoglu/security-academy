@@ -31,8 +31,6 @@ def extend_key(key, cipher_length):
     return key
 
 def calculate_plaintext_letter(cipher_letter, key):
-    offset = ord(key) - 96
-    plaintext_letter = ord(cipher_letter) - offset
-    if plaintext_letter < 97:
-        plaintext_letter += 26
-    return chr(plaintext_letter)
+    offset = ord(key) - 97
+    plaintext_letter = ((ord(cipher_letter) - 97) - offset) % 26
+    return chr(plaintext_letter + 97)
