@@ -56,10 +56,11 @@
               topics:</p>
 
           <ul>
-              <li class="list-group-item">1. Learning Objective 1</li>
-              <li class="list-group-item">2. Learning Objective 2</li>
-              <li class="list-group-item">3. Learning Objective 3</li>
-              <li class="list-group-item">4. Learning Objective 4</li>
+              <li class="list-group-item">1. The importance of antivirus software</li>
+              <li class="list-group-item">2. Three different types of methods to detect malicious software: Signature
+                  Based, Behavioral Based, and Heuristic Based Detection</li>
+              <li class="list-group-item">3. The pros and cons of using each detection method</li>
+              <li class="list-group-item">4. When each detection method is effective and when each detection method is not</li>
           </ul>
 
           <hr>
@@ -103,7 +104,7 @@
               <div class="row">
                   <div class="col-sm-8 mx-auto d-block">
                       <div class="embed-responsive embed-responsive-16by9">
-                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZfA01rEkS94" allowfullscreen></iframe>
                       </div>
                   </div>
               </div>
@@ -139,7 +140,7 @@
               <div class="row">
                   <div class="col-sm-8 mx-auto d-block">
                       <div class="embed-responsive embed-responsive-16by9">
-                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/sfmRURRfvOI" allowfullscreen></iframe>
                       </div>
                   </div>
               </div>
@@ -148,7 +149,7 @@
 
           <hr>
 
-          <h1 class="text-center">Section 3 - Heuristic-Based Detection</h1>
+          <h1 class="text-center">Section 4 - Heuristic-Based Detection</h1>
 
           <p><b>Heuristic-Based Detection</b> looks for threats by searching for specific aspects., such as potentially malicious
               commands or instructions. Each program is graded based off how dangerous it can be. After a certain threshold,
@@ -165,79 +166,63 @@
               <div class="row">
                   <div class="col-sm-8 mx-auto d-block">
                       <div class="embed-responsive embed-responsive-16by9">
-                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vG8alM_lnvY" allowfullscreen></iframe>
                       </div>
                   </div>
               </div>
           </div>
 
           <hr>
-
-          <h1 class="text-center">Section 4 - Cloud-Based Detection</h1>
-
-          <p><b>Cloud-Based Detection</b> uses agent software. Agent software is software that works autonomously to perform a
-              function for another program. Multiple servers and web services help to detect the newest threats in a system.
-              Rather than having the data processing occur locally, the data processing occurs on web services so that the
-              local system does not have to store large amounts of virus information. A client will scan a system for any
-              malware already listed in a web service’s database, saving the local system’s resources.</p>
-
-          <hr>
-
-          <h4 class="text-center">Video on Cloud-Based Detection</h4>
-
-          <div class="container">
-              <div class="row">
-                  <div class="col-sm-8 mx-auto d-block">
-                      <div class="embed-responsive embed-responsive-16by9">
-                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l8_1O4dO3Bg" allowfullscreen></iframe>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-       <hr>
 
       <div id="quiz" class="list-group col-md">
-            <h4 class="text-center">Quiz On Anti-Virus Software (Still under construction)</h4>
+            <h4 class="text-center">Quiz On Anti-Virus Software</h4>
 
             <hr>
 
             <button class="btn btn-light " data-toggle="collapse" data-parent="#quiz" href="#collapse1">
-              What is a virus? </button>
+                Even when using signature based detection, why can threats still harm your system? </button>
             <div id="collapse1" class="panel-collapse collapse in">
-              <div class="">Answer still under construction...</div>
+              <div class=""> Signature based detection is reactionary. Need a threat to enter your system in order for
+                  you to make a signature of it</div>
+                <div>There are also variations of threats, which the system may not have a signature for. A vs a.</div>
             </div>
 
             <hr>
 
             <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse2">
-              What is the difference between signature and behavioral based detection?</button>
+                Using behavioral based detection, what leads to false positives? How can we reduce the amount of false positives?</button>
             <div id="collapse2" class="panel-collapse collapse in">
-              <div class="">Answer still under construction...</div>
+              <div class="">What we deem as bad behaviors does not necessarily mean a program is malicious</div>
+                <div>Need to improve our definitions of bad behaviors, but avoiding false positives is practically impossible</div>
             </div>
 
             <hr>
 
             <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse3">
-              Why would you want to use cloud based detection?</button>
+                In heuristic based detection, can a new virus enter your system undetected?</button>
             <div id="collapse3" class="panel-collapse collapse in">
-              <div class="">Answer still under construction...</div>
+              <div class=""> Yes, because programs/threats can appear to be non-malicious, so the system won’t detect its negative attributes</div>
+                <div>Also, a program/threat can be malicious and be under the threshold for something to be malicious.
+                    When this happens, a malicious program/threat can still enter the system</div>
+                <div>However, it is still possible that the system can still detect brand new programs/threats</div>
             </div>
 
             <hr>
 
             <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse4">
-              Does anti-virus protect your system perfectly?</button>
+                Does behavioral based detection or heuristic based detection lead to more false positives? Why?</button>
             <div id="collapse4" class="panel-collapse collapse in">
-              <div class="">Answer still under construction...</div>
+              <div class="">Heuristic based detection has more false positives, since we are looking at more aspects of a
+                  program and thus are more likely to deem it malicious based on the fact that we are looking at more
+                  attributes of a program</div>
             </div>
 
           <hr>
 
           <button class="btn btn-light" data-toggle="collapse" data-parent="#quiz" href="#collapse5">
-              What is the weakest link when it comes to protecting yourself online?</button>
+              What is the weakest link when it comes protecting yourself from viruses online?</button>
           <div id="collapse5" class="panel-collapse collapse in">
-              <div class="">Answer still under construction...</div>
+              <div class="">The User</div>
           </div>
         </div>
 
@@ -256,6 +241,15 @@
               <p>https://www.infosecurity-magazine.com/opinions/malware-detection-signatures/</p>
               <p>https://bricata.com/blog/signature-detection-vs-network-behavior/</p>
               <p>https://www.infosecurity-magazine.com/opinions/malware-detection-signatures/</p>
+              <p>http://techgenix.com/pros-cons-behavioral-signature-whitelist-security/</p>
+              <p>https://itstillworks.com/behavioral-vs-heuristic-antivirus-3122.html</p>
+              <p>https://bricata.com/blog/signature-detection-vs-network-behavior/</p>
+              <p>https://www.infosecurity-magazine.com/opinions/malware-detection-signatures/</p>
+              <p>https://blog.malwarebytes.com/security-world/2017/09/explained-false-positives/</p>
+              <p>https://www.forcepoint.com/cyber-edu/heuristic-analysis</p>
+              <p>https://www.opswat.com/blog/understanding-heuristic-based-scanning-vs-sandboxing</p>
+              <p>https://www.toptenreviews.com/software/articles/what-is-heuristic-antivirus-detection/</p>
+              <p>https://www.forcepoint.com/cyber-edu/heuristic-analysis</p>
           </div>
         </div>
 
@@ -267,7 +261,6 @@
           <div class="row">
             <div class="col-md-6 mt-md-0 mt-3">
               <h5 class="text-uppercase">Hope you enjoyed this section!</h5>
-              <p>We can put more things here</p>
             </div>
             <hr class="clearfix w-100 d-md-none pb-3">
             <div class="col-md-6 mb-md-0 mb-3">
