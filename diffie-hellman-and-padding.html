@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Diffie Hellman</title>
+  <title>Diffie Hellman and Padding</title>
 
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -41,7 +41,7 @@
           <a class="dropdown-item bg-light" href="anti-virus-software.html">Anti Virus Software</a>
           <a class="dropdown-item bg-light" href="./about-us.html">About Us</a>
         </div>
-        <h4 class="mx-auto">Diffie Hellman</h4>
+        <h4 class="mx-auto">Diffie Hellman and Padding</h4>
         <div>
         <a class="btn btn-outline-secondary" href="./cloud-security.html"><i class="fa fa-arrow-left"></i> Cloud Security</a>
         <a class="btn btn-outline-secondary" href="crypto.html">Cryptography <i class="fa fa-arrow-right"></i></a>
@@ -56,10 +56,13 @@
           topics:</p>
 
         <ul>
-          <li class="list-group-item">1. Learning Objective 1</li>
-          <li class="list-group-item">2. Learning Objective 2</li>
-          <li class="list-group-item">3. Learning Objective 3</li>
-          <li class="list-group-item">4. Learning Objective 4</li>
+          <li class="list-group-item">1. Understand what the Diffie-Hellman Key Exchange is and how it works</li>
+          <li class="list-group-item">2. Understand how Man-In-The-Middle attacks occur</li>
+          <li class="list-group-item">3. Calculate a shared secret key given some combination of Alice and Bob’s secret
+            keys and total values</li>
+          <li class="list-group-item">4. Identify what information an attacker needs in order to access/alter the transmitted messages</li>
+          <li class="list-group-item">5. Identify different padding methods and their strength</li>
+          <li class="list-group-item">5. Understand why padding is needed and used</li>
         </ul>
 
         <hr>
@@ -109,39 +112,102 @@
         <div id="quizdh" class="list-group col-md">
           <h4 class="text-center">Quiz For Diffie Hellman Key Exchange</h4>
 
-          <h4 class="text-center">(Still Under Construction...)</h4>
-
-          <hr>
-
           <button class="btn btn-light " data-toggle="collapse" data-parent="#quizdh" href="#collapse1">
-            Question Number 1 </button>
+            Suppose Alice’s chosen value is 5, Bob’s chosen value is 7, the generator is 3, and p = 13. What is Alice
+            and Bob’s shared secret key? </button>
           <div id="collapse1" class="panel-collapse collapse in">
-            <div class="">Answer is still under construction...</div>
+            <div>$$g^a (mod \ p) = 3^5 (mod \ 13) = 9$$</div>
+            <div>$$g^b (mod \ p) = 3^7 (mod \ 13) = 3$$</div>
+            <div>$$7^9 (mod \ 13) = 8$$</div>
+            <div>$$5^3 (mod \ 13) = 8$$</div>
+            <div>Alice and Bob’s shared secret key is 8.</div>
           </div>
 
           <hr>
 
           <button class="btn btn-light" data-toggle="collapse" data-parent="#quizdh" href="#collapse2">
-            Question Number 2</button>
+            Suppose an attacker has both \(g^a (mod \ p)\) and \(g^b (mod \ p)\) where a and b are Alice and Bob’s chosen values.
+            Does the attacker have enough information to access the users’ messages?</button>
           <div id="collapse2" class="panel-collapse collapse in">
-            <div class="">Answer is still under construction...</div>
+            <div>No. In this scenario, the attacker must have access to at least one of their chosen values in order
+              to calculate the shared secret key.</div>
           </div>
 
           <hr>
 
           <button class="btn btn-light" data-toggle="collapse" data-parent="#quizdh" href="#collapse3">
-            Question Number 3</button>
+            Do Bob and Alice have to keep their total values private?</button>
           <div id="collapse3" class="panel-collapse collapse in">
-            <div class="">Answer is still under construction...</div>
+            <div>No. The total values must be passed between Alice and Bob in order to calculate the shared secret key.
+              By default, these values must be public. </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <h1 class="text-center">Padding</h1>
+
+        <p>In this section we want to introduce you to padding.</p>
+
+        <p><b>Padding</b> is the process of adding text to a message in order to encrypt/hide its contents.</p>
+
+        <ol>There are three methods of padding
+          <li>Salt</li>
+          <li>Pepper</li>
+          <li>Nonce</li>
+        </ol>
+
+        <p><b>Salting</b> works by adding a unique string of text to the end of a password and then hashing the password
+          plus salt.</p>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 mx-auto d-block">
+              <figure class="text-center">
+                <img class="img-responsive img-fluid" src="diffie-hellman-pictures/salt.png">
+                <figcaption class="figure-caption">Figure 1: Example of Salting</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <p>A <b>Pepper</b>is almost exactly the same as a salt, with the exception that it is not to be stored in the database.</p>
+
+        <p>The term <b>Nonce</b> is used for a number that is only used once. Nonces work similarly to that of salts and peppers
+          and are commonly used in message authentication codes.</p>
+
+        <hr>
+
+        <h4 class="text-center">Video on Padding</h4>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 mx-auto d-block">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/H_PjucWMZ7E" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div id="quizpad" class="list-group col-md">
+          <h4 class="text-center">Quiz For Padding</h4>
+
+          <button class="btn btn-light " data-toggle="collapse" data-parent="#quizpad" href="#collapse21">
+            Can padding methods be combined?</button>
+          <div id="collapse21" class="panel-collapse collapse in">
+            <div>Yes. It is good practice to combine padding methods.</div>
           </div>
 
           <hr>
 
-          <button class="btn btn-light" data-toggle="collapse" data-parent="#quizdh" href="#collapse4">
-            Question Number 4</button>
-          <div id="collapse4" class="panel-collapse collapse in">
-            <div class="">Answer is still under construction...</div>
-          </div>
+          <button class="btn btn-light" data-toggle="collapse" data-parent="#quizpad" href="#collapse22">
+            True or False - The salting process is as follows: password → hp = H(password) → store hp + salt </button>
+            <div id="collapse22" class="panel-collapse collapse in">
+              <div>False. The salting process goes password → password + salt → store H(password + salt).</div>
+            </div>
         </div>
 
         <hr>
@@ -150,7 +216,24 @@
         <div id="ref" class="list-group col-md">
           <button class="btn btn-light " data-toggle="collapse" data-parent="#ref" href="#collapseref"><h1>References</h1></button>
           <div id="collapseref" class="panel-collapse collapse in">
-            <p>Can put links here</p>
+            <ul>
+              <li>https://www.youtube.com/watch?v=YEBfamv-_do</li>
+              <ul><li>This is a video explaining how the Diffie-Hellman key exchange works. </li></ul>
+
+              <li>http://mathworld.wolfram.com/Diffie-HellmanProtocol.html</li>
+              <ul><li>This link walks through the computation of the shared key in Diffie-Hellman. </li></ul>
+
+              <li>https://en.wikipedia.org/wiki/Man-in-the-middle_attack</li>
+              <ul><li>This link explains the process of the Man-In-The-Middle attack and how the attacker gains access
+                to the passed information. </li></ul>
+
+              <li>https://en.wikipedia.org/wiki/Padding_(cryptography)</li>
+              <ul><li>This link defines padding and provides several examples of the process.</li></ul>
+
+              <li>https://medium.com/@fridakahsas/salt-nonces-and-ivs-whats-the-difference-d7a44724a447</li>
+              <ul><li>This link describes the difference between salt, pepper, and nonce and explains how they are used. </li></ul>
+
+            </ul>
           </div>
         </div>
 
