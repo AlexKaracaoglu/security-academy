@@ -94,7 +94,29 @@
 
           <hr>
 
-        <h1 class="text-center">Section 3 - Components in Cloud Security: Trust</h1>
+        <h1 class="text-center">Section 3 - Cloud Service Models</h1>
+          <p>Different types of cloud computing service models provide different levels of security services. In other
+              words, the threats vary depending on the deployment model and, hence, the required security measures required
+              vary based on the type of cloud model — software-as-a-service (SaaS), infrastructure-as-a-service (IaaS), or
+              platform-as-a-service model (PaaS).</p>
+
+          <p><b>Software-as-a-Service (SaaS):</b> In SaaS, the business’s information in the cloud is kept beyond the
+              organizational boundary. For this model, extra security policies are needed in order to prevent data
+              security and potential exposures in the application. SaaS delivery model poses security challenges such
+              as data integrity, availability and confidentiality, authorization and authentication, and network attacks.
+              SaaS centrally hosts software and data that are accessible via a browser.</p>
+
+          <p><b>Infrastructure-as-a-Service (IaaS): </b>IaaS provides the storage and networking components to cloud networking.
+              It relies heavily on application programming interfaces (APIs) to allow enterprises to manage and interact with the
+              cloud. However, cloud APIs tend to be insecure since they are open and readily accessible on the network.</p>
+
+          <p><b>Platform-as-a-Service (PaaS): </b>In PaaS, the users controls the applications that run in cloud environment,
+              but it does not control the hardware or network substructure and operating systems. Lack of validation,
+              anonymous sign ups and service fraud are major issues of PaaS.</p>
+
+        <hr>
+
+        <h1 class="text-center">Section 4 - Fundamental Security Measures</h1>
 
         <p>This section will provide an overview of different ways you can manage security in the cloud. Be sure to check out
             the videos for a more in depth look at these different methods!</p>
@@ -106,6 +128,18 @@
             you might allow specific employees application access, while restricting others. A general rule is to provide
             employees’ access to only the tools they need to do their job. By maintaining strict access control, you can
             keep critical documents from malicious insiders or hackers with stolen credentials.</p>
+
+          <h4 class="text-center">Video on Firewalls and Access Control</h4>
+
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-8 mx-auto d-block">
+                      <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4E6FkBFXjkg" allowfullscreen></iframe>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
           <hr>
 
@@ -140,38 +174,27 @@
           <div id="quizcloud" class="list-group col-md">
               <h4 class="text-center">Quiz For Cloud Security</h4>
 
-              <h4 class="text-center">(Still Under Construction...)</h4>
-
               <hr>
 
               <button class="btn btn-light " data-toggle="collapse" data-parent="#quizcloud" href="#collapse1">
-                  Question Number 1 </button>
+                  How does a cloud service model impact security? </button>
               <div id="collapse1" class="panel-collapse collapse in">
-                  <div class="">Answer is still under construction...</div>
+                  <div class="">The threats present vary depending on the cloud service model.Therefore, the necessary
+                      security measures needed can vary depending on the cloud model.</div>
               </div>
 
               <hr>
 
               <button class="btn btn-light" data-toggle="collapse" data-parent="#quizcloud" href="#collapse2">
-                  Question Number 2</button>
+                  What’s the difference between access control and data masking?</button>
               <div id="collapse2" class="panel-collapse collapse in">
-                  <div class="">Answer is still under construction...</div>
-              </div>
-
-              <hr>
-
-              <button class="btn btn-light" data-toggle="collapse" data-parent="#quizcloud" href="#collapse3">
-                  Question Number 3</button>
-              <div id="collapse3" class="panel-collapse collapse in">
-                  <div class="">Answer is still under construction...</div>
-              </div>
-
-              <hr>
-
-              <button class="btn btn-light" data-toggle="collapse" data-parent="#quizcloud" href="#collapse4">
-                  Question Number 4</button>
-              <div id="collapse4" class="panel-collapse collapse in">
-                  <div class="">Answer is still under construction...</div>
+                  <div class="">Access control focuses on ensuring that only authorized personnel can view or change sensitive
+                      data. While access control can protect sensitive data in production environments, the same cannot
+                      be said when the data leaves the production stage.
+                      Data Masking encrypts personal identifiable information, such as names, emails, phone numbers, etc.
+                      By doing this, sensitive information is kept hidden outside the live production stage while
+                      maintaining the data’s integrity.
+                  </div>
               </div>
           </div>
 
@@ -181,7 +204,10 @@
         <div id="ref" class="list-group col-md">
           <button class="btn btn-light " data-toggle="collapse" data-parent="#ref" href="#collapseref"><h1>References</h1></button>
           <div id="collapseref" class="panel-collapse collapse in">
-            <p>Can put links here</p>
+              <p>https://www.academia.edu/36400003/Survey_on_Cloud_Computing_and_Data_Masking_Techniques_Survey_on_Cloud_Computing_and_Data_Masking_Techniques_by_Priya_dhir_and_Sushil_Garg</p>
+              <p>https://www.sdxcentral.com/cloud/definitions/cloud-computing-security-architecture/</p>
+              <p>https://www.wideband.net.au/blog/host-based-vs-network-based-firewalls/</p>
+              <p>https://blog.identityautomation.com/rbac-vs-abac-access-control-models-iam-explained</p>
           </div>
         </div>
 
